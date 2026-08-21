@@ -60,7 +60,7 @@ Use a URL `*.workers.dev` criada pela Cloudflare e valide:
 
 ## Domínios
 
-Em **Domains & Routes**, adicione o custom domain `syrum.com.br`. Para `www.syrum.com.br`, crie um redirecionamento 301 para o domínio principal preservando caminho e query string.
+O custom domain `syrum.com.br` é declarado em `wrangler.jsonc`. Cada deploy mantém essa associação de forma versionada. Para `www.syrum.com.br`, crie um redirecionamento 301 para o domínio principal preservando caminho e query string.
 
 ## Cutover seguro
 
