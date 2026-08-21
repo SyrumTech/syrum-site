@@ -2,10 +2,12 @@
   "name": "syrum-site",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --port 3200",
-    "build": "next build",
-    "start": "next start --port ${SITE_PORT:-3200}"
+    "check:functions": "node --check functions/api/leads.js",
+    "test:functions": "node scripts/test-pages-function.mjs",
+    "build": "npm run check:functions && npm run test:functions && next build"
   },
   "dependencies": {
     "gsap": "^3.15.0",

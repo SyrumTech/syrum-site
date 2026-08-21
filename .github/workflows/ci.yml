@@ -1,0 +1,39 @@
+name: Validar site
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - feat/separar-landing-syrum
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_PUBLIC_SITE_URL: https://syrum.com.br
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar e exportar site
+        run: npm run build
+
+      - name: Conferir artefatos do Pages
+        run: |
+          test -f out/index.html
+          test -f out/_headers
+          test -f out/_routes.json
