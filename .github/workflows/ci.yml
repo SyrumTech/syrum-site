@@ -32,8 +32,7 @@ jobs:
       - name: Validar e exportar site
         run: npm run build
 
-      - name: Conferir artefatos do Pages
+      - name: Conferir artefatos e configuração do Worker
         run: |
           test -f out/index.html
-          test -f out/_headers
-          test -f out/_routes.json
+          npm run deploy:dry-run

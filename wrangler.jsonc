@@ -1,5 +1,10 @@
 {
   "name": "syrum-site",
-  "pages_build_output_dir": "./out",
-  "compatibility_date": "2026-08-21"
+  "main": "./worker/index.js",
+  "compatibility_date": "2026-08-21",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
 }
