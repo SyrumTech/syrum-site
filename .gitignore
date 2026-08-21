@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.next-build/
+out/
+.wrangler/
+.dev.vars*
+.env*
+!.env.example
+npm-debug.log*

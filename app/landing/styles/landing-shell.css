@@ -1,0 +1,208 @@
+/*
+ * Casca estrutural da landing: contêiner raiz, navbar e sistema de botões.
+ * Todo seletor aqui é subordinado a `.syrum-landing` — nada vaza para
+ * /crm, /crm/channels, /crm/contacts/[id], /crm/flows, /crm/manage,
+ * /login ou /setup.
+ */
+
+.syrum-landing {
+  position: relative;
+  overflow-x: hidden;
+  background: var(--syrum-bg);
+  color: var(--syrum-text-primary);
+  font-family: var(--syrum-font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.syrum-landing *,
+.syrum-landing *::before,
+.syrum-landing *::after {
+  box-sizing: border-box;
+}
+
+.syrum-landing a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.syrum-landing a:focus-visible,
+.syrum-landing button:focus-visible {
+  outline: 2px solid var(--syrum-blue);
+  outline-offset: 3px;
+  border-radius: var(--syrum-radius-sm);
+}
+
+/* ---------- Header ---------- */
+
+.syrum-landing-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(180deg, rgb(7 8 12 / 90%), rgb(7 8 12 / 55%));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.syrum-landing-header-inner {
+  max-width: var(--syrum-container-max);
+  margin: 0 auto;
+  padding: var(--syrum-space-xs) var(--syrum-container-pad);
+  display: flex;
+  align-items: center;
+  gap: var(--syrum-space-md);
+}
+
+.syrum-landing-brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.syrum-brand-mark-logo {
+  display: block;
+  width: clamp(96px, 8vw, 120px);
+  height: auto;
+}
+
+.syrum-landing-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.syrum-landing-nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--syrum-space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.syrum-landing-nav a {
+  font-size: 0.875rem;
+  color: var(--syrum-text-secondary);
+  transition: color var(--syrum-duration-sm) var(--syrum-ease);
+}
+
+.syrum-landing-nav a:hover {
+  color: var(--syrum-text-primary);
+}
+
+.syrum-landing-header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--syrum-space-xs);
+}
+
+/* ---------- Botões ---------- */
+
+.syrum-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.375rem;
+  border: 1px solid transparent;
+  border-radius: var(--syrum-radius-pill);
+  font-family: var(--syrum-font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--syrum-duration-sm) var(--syrum-ease),
+    border-color var(--syrum-duration-sm) var(--syrum-ease),
+    box-shadow var(--syrum-duration-sm) var(--syrum-ease),
+    transform var(--syrum-duration-sm) var(--syrum-ease),
+    color var(--syrum-duration-sm) var(--syrum-ease);
+}
+
+.syrum-btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+}
+
+.syrum-btn-lg {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+}
+
+.syrum-btn-primary {
+  background: var(--syrum-text-primary);
+  color: var(--syrum-bg);
+}
+
+.syrum-btn-primary:hover {
+  box-shadow:
+    0 0 0 1px rgb(244 245 247 / 40%),
+    0 14px 34px -10px rgb(115 87 255 / 55%);
+  transform: translateY(-1px);
+}
+
+.syrum-btn-secondary {
+  background: rgb(244 245 247 / 4%);
+  border-color: var(--syrum-line-strong);
+  color: var(--syrum-text-primary);
+}
+
+.syrum-btn-secondary:hover {
+  background: rgb(244 245 247 / 8%);
+  border-color: rgb(244 245 247 / 32%);
+}
+
+.syrum-btn-ghost {
+  background: transparent;
+  color: var(--syrum-text-secondary);
+  padding-inline: 0.25rem;
+}
+
+.syrum-btn-ghost:hover {
+  color: var(--syrum-text-primary);
+}
+
+/* ---------- Responsivo: header ---------- */
+
+@media (max-width: 900px) {
+  .syrum-landing-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .syrum-landing-header-actions .syrum-btn-ghost {
+    display: none;
+  }
+
+  .syrum-btn-sm {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .syrum-landing * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Ajustes visuais da revisão da Etapa 1 */
+
+/* Garante contraste do texto nos CTAs claros, inclusive contra estilos globais. */
+.syrum-landing .syrum-btn-primary {
+  color: #07080c;
+  -webkit-text-fill-color: #07080c;
+}
+
+.syrum-landing .syrum-btn-primary:hover,
+.syrum-landing .syrum-btn-primary:focus-visible {
+  color: #07080c;
+  -webkit-text-fill-color: #07080c;
+}

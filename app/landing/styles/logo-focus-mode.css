@@ -1,0 +1,456 @@
+/* =========================================================
+   TESTE DO HERO
+   Inicial: header + logo maior
+   Scroll: header some + logo reduz + título aparece
+   ========================================================= */
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+/* O header volta a aparecer no estado inicial. */
+[data-syrum-header] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+  pointer-events: auto !important;
+
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms ease,
+    visibility 0ms linear !important;
+}
+
+[data-syrum-header].syrum-header--hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-18px) !important;
+  filter: blur(5px) !important;
+  pointer-events: none !important;
+
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms ease,
+    visibility 0ms linear 650ms !important;
+}
+
+/* =========================================================
+   ELEMENTOS QUE CONTINUAM OCULTOS
+   ========================================================= */
+
+.syrum-origin-description,
+.syrum-origin-actions,
+.syrum-origin-scroll,
+[data-origin-description],
+[data-origin-actions] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.syrum-origin-scene,
+.syrum-origin-shell,
+.syrum-origin-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  min-height: 100svh !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   TÍTULO — ESCONDIDO INICIALMENTE
+   ========================================================= */
+
+.syrum-origin-title,
+[data-origin-title] {
+  position: absolute !important;
+  z-index: 25 !important;
+
+  top: clamp(4.6rem, 10vh, 7.2rem) !important;
+  right: 1rem !important;
+  left: 1rem !important;
+
+  display: block !important;
+  width: min(94vw, 900px) !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  color: rgb(244 245 249) !important;
+
+  font-size:
+    clamp(2.34rem, 4.38vw, 4.25rem) !important;
+
+  line-height: 0.94 !important;
+  letter-spacing: -0.06em !important;
+  text-align: center !important;
+
+  transform: translateY(-16px) scale(0.98) !important;
+
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms linear 620ms !important;
+}
+
+/* O título aparece depois do primeiro scroll. */
+html.syrum-hero--scrolled .syrum-origin-title,
+html.syrum-hero--scrolled [data-origin-title] {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform:
+    translateY(0)
+    scale(1) !important;
+
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms linear !important;
+}
+
+.syrum-origin-title-line {
+  display: block !important;
+}
+
+.syrum-origin-title-line--sub {
+  display: block !important;
+  margin-top: 0.12em !important;
+  font-size: 0.7em !important;
+  line-height: 1 !important;
+}
+
+.syrum-origin-emphasis {
+  color: transparent !important;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgb(218 216 250) 0%,
+      rgb(162 135 255) 35%,
+      rgb(67 143 255) 72%,
+      rgb(137 201 255) 100%
+    ) !important;
+
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+/*
+ * Estado inicial:
+ * logo 10% maior e centralizada.
+ */
+
+html.syrum-hero--intro .syrum-cinematic-stage > .syrum-hero-symbol {
+  top: 52% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width:
+    clamp(242px, 24.2vw, 396px) !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1) !important;
+
+  z-index: 20 !important;
+  pointer-events: none !important;
+
+  transition:
+    top 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/*
+ * Depois do scroll:
+ * reduz aproximadamente 10% e desce levemente,
+ * abrindo espaço para o título.
+ */
+
+html.syrum-hero--scrolled
+.syrum-cinematic-stage
+> .syrum-hero-symbol {
+  top: 52% !important;
+
+  width:
+    clamp(220px, 22vw, 360px) !important;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1) !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+  .syrum-origin-title,
+  [data-origin-title] {
+    top: 4.5rem !important;
+    width: calc(100% - 2rem) !important;
+
+    font-size:
+      clamp(2.2rem, 9.7vw, 3.6rem) !important;
+  }
+
+  html.syrum-hero--intro .syrum-cinematic-stage > .syrum-hero-symbol {
+    top: 53% !important;
+
+    width:
+      clamp(187px, 47vw, 264px) !important;
+  }
+
+  html.syrum-hero--scrolled
+  .syrum-cinematic-stage
+  > .syrum-hero-symbol {
+    top: 55% !important;
+
+    width:
+      clamp(170px, 43vw, 240px) !important;
+  }
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-syrum-header],
+  .syrum-origin-title,
+  html.syrum-hero--intro .syrum-cinematic-stage > .syrum-hero-symbol {
+    transition-duration: 180ms !important;
+  }
+}
+
+/* =========================================================
+   CORREÇÃO — título controlado pelo estado do primeiro scroll
+   ========================================================= */
+
+/*
+ * A timeline pode aplicar opacity/visibility no contêiner pai.
+ * Mantemos o pai disponível e controlamos somente o título.
+ */
+.syrum-origin-copy[data-origin-content],
+[data-origin-content] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Estado inicial: título escondido */
+html:not(.syrum-hero--scrolled)
+.syrum-origin-title,
+html:not(.syrum-hero--scrolled)
+[data-origin-title] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform:
+    translateY(-16px)
+    scale(0.98) !important;
+}
+
+/* Depois do primeiro scroll: título visível */
+html.syrum-hero--scrolled
+.syrum-origin-title,
+html.syrum-hero--scrolled
+[data-origin-title] {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform:
+    translateY(0)
+    scale(1) !important;
+}
+
+/* =========================================================
+   ETAPA — descrição e botões abaixo da logo
+   ========================================================= */
+
+/*
+ * Estado inicial:
+ * descrição e botões permanecem escondidos.
+ */
+
+html:not(.syrum-hero--scrolled)
+.syrum-origin-description,
+html:not(.syrum-hero--scrolled)
+[data-origin-description],
+html:not(.syrum-hero--scrolled)
+.syrum-origin-actions,
+html:not(.syrum-hero--scrolled)
+[data-origin-actions] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/*
+ * Depois do primeiro scroll, descrição e botões
+ * passam a ser posicionados independentemente do grid antigo.
+ */
+
+html.syrum-hero--scrolled
+.syrum-origin-description,
+html.syrum-hero--scrolled
+[data-origin-description] {
+  position: absolute !important;
+  z-index: 26 !important;
+
+  top: calc(52% + 179px) !important;
+  right: 1rem !important;
+  left: 1rem !important;
+
+  display: block !important;
+  width: min(calc(100% - 2rem), 680px) !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  color: rgb(169 175 195) !important;
+  font-size: clamp(0.94rem, 1.05vw, 1.06rem) !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  text-wrap: balance !important;
+
+  transform: translateY(10px) !important;
+
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) 140ms,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1) 140ms,
+    visibility 0ms linear !important;
+
+  pointer-events: auto !important;
+}
+
+html.syrum-hero--scrolled
+.syrum-origin-actions,
+html.syrum-hero--scrolled
+[data-origin-actions] {
+  position: absolute !important;
+  z-index: 27 !important;
+
+  top: calc(52% + 252px) !important;
+  right: 1rem !important;
+  left: 1rem !important;
+
+  display: flex !important;
+  width: min(calc(100% - 2rem), 720px) !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+
+  justify-content: center !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform: translateY(12px) !important;
+
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) 230ms,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1) 230ms,
+    visibility 0ms linear !important;
+
+  pointer-events: auto !important;
+}
+
+/* Organiza os dois botões lado a lado. */
+html.syrum-hero--scrolled
+.syrum-origin-actions > *,
+html.syrum-hero--scrolled
+[data-origin-actions] > * {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.8rem !important;
+}
+
+/*
+ * O estado final da animação remove o pequeno deslocamento
+ * usado na entrada.
+ */
+
+html.syrum-hero--scrolled
+.syrum-origin-description,
+html.syrum-hero--scrolled
+[data-origin-description],
+html.syrum-hero--scrolled
+.syrum-origin-actions,
+html.syrum-hero--scrolled
+[data-origin-actions] {
+  transform: translateY(0) !important;
+}
+
+/* =========================================================
+   MONITORES MAIS BAIXOS
+   ========================================================= */
+
+@media (min-width: 721px) and (max-height: 820px) {
+  html.syrum-hero--scrolled
+  .syrum-origin-description,
+  html.syrum-hero--scrolled
+  [data-origin-description] {
+    top: calc(52% + 153px) !important;
+    font-size: 0.91rem !important;
+  }
+
+  html.syrum-hero--scrolled
+  .syrum-origin-actions,
+  html.syrum-hero--scrolled
+  [data-origin-actions] {
+    top: calc(52% + 217px) !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+  html.syrum-hero--scrolled
+  .syrum-origin-description,
+  html.syrum-hero--scrolled
+  [data-origin-description] {
+    top: calc(55% + 128px) !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 31rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.46 !important;
+  }
+
+  html.syrum-hero--scrolled
+  .syrum-origin-actions,
+  html.syrum-hero--scrolled
+  [data-origin-actions] {
+    top: calc(55% + 212px) !important;
+    width: calc(100% - 2rem) !important;
+  }
+
+  html.syrum-hero--scrolled
+  .syrum-origin-actions > *,
+  html.syrum-hero--scrolled
+  [data-origin-actions] > * {
+    gap: 0.6rem !important;
+  }
+}

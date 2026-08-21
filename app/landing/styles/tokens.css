@@ -1,0 +1,49 @@
+/*
+ * Tokens visuais exclusivos da landing pública.
+ * Tudo vive dentro do seletor `.syrum-landing` para nunca vazar para
+ * /crm, /crm/*, /login ou /setup.
+ */
+
+.syrum-landing {
+  color-scheme: dark;
+
+  /* Paleta oficial SYRUM */
+  --syrum-bg: #07080c;
+  --syrum-surface: #0d0f16;
+  --syrum-surface-elevated: #151823;
+  --syrum-text-primary: #f4f5f7;
+  --syrum-text-secondary: #9ca3b2;
+  --syrum-purple: #7357ff;
+  --syrum-blue: #368cff;
+  --syrum-silver: #c9ced8;
+
+  /* Tipografia — variáveis geradas por next/font em styles/fonts.ts */
+  --syrum-font-heading: var(--font-sora), 'Segoe UI', system-ui, sans-serif;
+  --syrum-font-body: var(--font-manrope), 'Segoe UI', system-ui, sans-serif;
+
+  /* Linhas e superfícies auxiliares, derivadas da paleta oficial */
+  --syrum-line: rgb(244 245 247 / 10%);
+  --syrum-line-strong: rgb(244 245 247 / 18%);
+
+  /* Espaçamento fluido (clamp) */
+  --syrum-space-2xs: clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
+  --syrum-space-xs: clamp(0.75rem, 0.68rem + 0.35vw, 1rem);
+  --syrum-space-sm: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  --syrum-space-md: clamp(2rem, 1.7rem + 1.2vw, 3rem);
+  --syrum-space-lg: clamp(3rem, 2.4rem + 2.4vw, 5rem);
+  --syrum-space-xl: clamp(4rem, 3rem + 4vw, 7.5rem);
+
+  /* Container */
+  --syrum-container-max: 1360px;
+  --syrum-container-pad: clamp(1.25rem, 3vw, 4rem);
+
+  /* Movimento */
+  --syrum-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --syrum-duration-sm: 200ms;
+  --syrum-duration-md: 600ms;
+
+  /* Raios */
+  --syrum-radius-sm: 8px;
+  --syrum-radius-md: 12px;
+  --syrum-radius-pill: 999px;
+}
