@@ -1,0 +1,20 @@
+[Unit]
+Description=Syrum institutional site
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/projetos/syrum-site
+Environment=NODE_ENV=production
+Environment=SITE_PORT=3200
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+EnvironmentFile=-%h/.config/syrum/site.env
+ExecStart=%h/.local/bin/npm start
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,260 @@
+/* =========================================================
+   SYRUM — Animação da logo com reflexo interno
+   ========================================================= */
+
+.syrum-cinematic-stage > .syrum-hero-symbol {
+  perspective: 1400px;
+  overflow: visible;
+}
+
+.syrum-cinematic-stage
+> .syrum-hero-symbol
+.syrum-hero-symbol-mark {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  overflow: visible;
+  transform-style: preserve-3d;
+  animation:
+    syrum-logo-orbit
+    9s
+    cubic-bezier(0.45, 0, 0.25, 1)
+    infinite;
+  will-change: transform;
+}
+
+.syrum-logo-lab-depth {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation:
+    syrum-logo-breathe
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+/*
+ * Desativa completamente a cópia traseira.
+ * Era ela que aparecia separada da logo durante a rotação.
+ */
+
+.syrum-logo-lab-image--back {
+  display: none !important;
+}
+
+.syrum-logo-lab-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.syrum-logo-lab-image--front {
+  z-index: 2;
+  opacity: 1;
+  filter:
+    saturate(1.08)
+    contrast(1.035)
+    drop-shadow(0 18px 27px rgb(0 0 0 / 42%))
+    drop-shadow(0 0 20px rgb(82 133 255 / 23%));
+  transform: translateZ(10px);
+}
+
+/*
+ * A camada nunca se move para fora da logo.
+ * Somente a posição do gradiente interno é animada.
+ */
+
+.syrum-logo-lab-reflection {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      110deg,
+      transparent 0%,
+      transparent 36%,
+      rgb(255 255 255 / 10%) 42%,
+      rgb(255 255 255 / 78%) 49%,
+      rgb(190 225 255 / 38%) 54%,
+      transparent 63%,
+      transparent 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: 230% 230%;
+  background-position: 145% 50%;
+
+  /*
+   * O SVG branco funciona como máscara:
+   * qualquer área fora do desenho permanece invisível.
+   */
+
+  -webkit-mask-image:
+    url('/brand/svg/syrum-symbol-white.svg');
+  mask-image:
+    url('/brand/svg/syrum-symbol-white.svg');
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  animation:
+    syrum-logo-reflection
+    4.8s
+    ease-in-out
+    infinite;
+
+  transform: translateZ(18px);
+  backface-visibility: hidden;
+  mix-blend-mode: screen;
+}
+
+.syrum-logo-lab-glow {
+  position: absolute;
+  z-index: -1;
+  inset: 13%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgb(104 88 255 / 29%) 0%,
+      rgb(53 142 255 / 17%) 44%,
+      transparent 73%
+    );
+  filter: blur(34px);
+  opacity: 0.76;
+  animation:
+    syrum-logo-glow
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+/*
+ * Movimento 3D leve.
+ * Evita virar completamente de costas, pois uma imagem
+ * plana em 360 graus aparenta desaparecer ou se quebrar.
+ */
+
+@keyframes syrum-logo-orbit {
+  0%,
+  100% {
+    transform:
+      rotateX(0deg)
+      rotateY(0deg)
+      rotateZ(0deg)
+      translate3d(0, 0, 0);
+  }
+
+  22% {
+    transform:
+      rotateX(3deg)
+      rotateY(-14deg)
+      rotateZ(-0.7deg)
+      translate3d(0, -3px, 12px);
+  }
+
+  50% {
+    transform:
+      rotateX(-2deg)
+      rotateY(13deg)
+      rotateZ(0.6deg)
+      translate3d(0, 1px, 20px);
+  }
+
+  76% {
+    transform:
+      rotateX(2deg)
+      rotateY(-9deg)
+      rotateZ(-0.4deg)
+      translate3d(0, -2px, 10px);
+  }
+}
+
+@keyframes syrum-logo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.018);
+  }
+}
+
+/*
+ * Apenas o background do reflexo atravessa a máscara.
+ * A própria camada permanece parada dentro da logo.
+ */
+
+@keyframes syrum-logo-reflection {
+  0%,
+  14% {
+    opacity: 0;
+    background-position: 145% 50%;
+  }
+
+  22% {
+    opacity: 0.72;
+  }
+
+  48% {
+    opacity: 0.82;
+    background-position: -45% 50%;
+  }
+
+  56%,
+  100% {
+    opacity: 0;
+    background-position: -45% 50%;
+  }
+}
+
+@keyframes syrum-logo-glow {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 0.88;
+    transform: scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .syrum-cinematic-stage
+  > .syrum-hero-symbol
+  .syrum-hero-symbol-mark,
+  .syrum-logo-lab-depth,
+  .syrum-logo-lab-reflection,
+  .syrum-logo-lab-glow {
+    animation: none !important;
+  }
+
+  .syrum-logo-lab-reflection {
+    opacity: 0;
+  }
+}

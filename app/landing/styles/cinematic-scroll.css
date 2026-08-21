@@ -1,0 +1,190 @@
+.syrum-cinematic {
+  position: relative;
+  background: var(--syrum-bg);
+}
+
+.syrum-cinematic-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.syrum-cinematic .syrum-ambient-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.syrum-cinematic .syrum-ambient-glow {
+  position: absolute;
+  inset: -10%;
+  opacity: 0.88;
+  background:
+    radial-gradient(
+      38% 42% at 78% 26%,
+      rgb(115 87 255 / 24%),
+      transparent 70%
+    ),
+    radial-gradient(
+      46% 50% at 16% 80%,
+      rgb(54 140 255 / 16%),
+      transparent 72%
+    );
+  mix-blend-mode: screen;
+  transform-origin: 58% 48%;
+}
+
+.syrum-cinematic .syrum-ambient-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgb(244 245 247 / 5%) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+.syrum-cinematic .syrum-ambient-grid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 55%;
+  background-image:
+    linear-gradient(var(--syrum-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--syrum-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(600px) rotateX(58deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, black, transparent 85%);
+  opacity: 0.18;
+}
+
+.syrum-cinematic .syrum-ambient-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      115% 90% at 32% 36%,
+      transparent 42%,
+      rgb(7 8 12 / 66%) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgb(7 8 12 / 22%),
+      transparent 20%,
+      transparent 72%,
+      var(--syrum-bg) 100%
+    );
+}
+
+.syrum-cinematic .syrum-hero-symbol {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: clamp(2.5rem, 5vw, 6.5rem);
+  width: clamp(230px, 25vw, 410px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.syrum-cinematic .syrum-hero-symbol-mark {
+  position: relative;
+  width: 100%;
+  filter: drop-shadow(0 0 62px rgb(115 87 255 / 22%));
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.syrum-cinematic .syrum-hero-symbol-mark::before {
+  content: '';
+  position: absolute;
+  inset: 9%;
+  z-index: -1;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgb(115 87 255 / 34%),
+      rgb(54 140 255 / 0%) 72%
+    );
+  filter: blur(46px);
+}
+
+.syrum-cinematic .syrum-brand-mark-symbol {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.94;
+}
+
+.syrum-cinematic--enhanced .syrum-origin-scene,
+.syrum-cinematic--enhanced .syrum-symbol-scene {
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 1100px) {
+  .syrum-cinematic .syrum-hero-symbol {
+    right: clamp(1rem, 2vw, 2.5rem);
+    width: clamp(220px, 34vw, 350px);
+  }
+}
+
+@media (max-width: 720px) {
+  .syrum-cinematic-stage {
+    min-height: 100svh;
+  }
+
+  .syrum-cinematic .syrum-ambient-grid {
+    height: 42%;
+  }
+
+  .syrum-cinematic .syrum-ambient-vignette {
+    background:
+      radial-gradient(
+        140% 70% at 50% 30%,
+        transparent 40%,
+        rgb(7 8 12 / 68%) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgb(7 8 12 / 25%),
+        transparent 18%,
+        transparent 65%,
+        var(--syrum-bg) 100%
+      );
+  }
+
+  .syrum-cinematic .syrum-hero-symbol {
+    top: clamp(5.7rem, 15vh, 7.4rem);
+    left: 50%;
+    right: auto;
+    width: clamp(210px, 58vw, 300px);
+    transform: translateX(-50%);
+  }
+
+  .syrum-cinematic .syrum-brand-mark-symbol {
+    opacity: 0.18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .syrum-cinematic-stage {
+    overflow: visible;
+  }
+
+  .syrum-cinematic .syrum-hero-symbol {
+    position: absolute;
+  }
+
+  .syrum-cinematic--enhanced .syrum-origin-scene,
+  .syrum-cinematic--enhanced .syrum-symbol-scene {
+    position: relative;
+    inset: auto;
+  }
+}

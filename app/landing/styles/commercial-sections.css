@@ -1,0 +1,1547 @@
+.syrum-commercial {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgb(96 68 221 / 8%),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 90% 45%,
+      rgb(38 119 231 / 7%),
+      transparent 32rem
+    ),
+    rgb(7 8 12);
+  color: rgb(239 240 246);
+}
+
+.syrum-commercial-container {
+  width: min(
+    calc(100% - 2rem),
+    1280px
+  );
+  margin-inline: auto;
+}
+
+.syrum-commercial section {
+  position: relative;
+  padding-block: clamp(6rem, 11vw, 10rem);
+}
+
+.syrum-section-heading {
+  max-width: 54rem;
+}
+
+.syrum-section-heading > span,
+.syrum-commercial-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgb(153 132 255);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.syrum-section-heading > span::before,
+.syrum-commercial-kicker::before {
+  content: '';
+  width: 1.6rem;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(119 91 243),
+      rgb(54 140 255)
+    );
+  box-shadow:
+    0 0 12px
+    rgb(115 87 255 / 58%);
+}
+
+.syrum-section-heading h2,
+.syrum-channel-copy h2,
+.syrum-automation-commercial-copy h2,
+.syrum-white-label-card h2,
+.syrum-faq-heading h2,
+.syrum-final-cta-card h2 {
+  margin: 1.25rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size:
+    clamp(2.3rem, 5vw, 5.2rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.syrum-section-heading > p,
+.syrum-channel-copy > p,
+.syrum-automation-commercial-copy > p,
+.syrum-white-label-card > div > p,
+.syrum-faq-heading > p,
+.syrum-final-cta-card > p {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  color: rgb(155 159 176);
+  font-size: clamp(0.98rem, 1.3vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.syrum-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.syrum-benefit-grid article {
+  min-height: 17rem;
+  padding: 1.7rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1.2rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 3.5%),
+      rgb(255 255 255 / 1.2%)
+    );
+}
+
+.syrum-benefit-grid article > span {
+  color: rgb(116 96 218);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.syrum-benefit-grid h3 {
+  max-width: 14rem;
+  margin: 4.5rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.syrum-benefit-grid p {
+  margin: 1rem 0 0;
+  color: rgb(142 147 165);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.syrum-feature-section {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-section-heading--split {
+  display: grid;
+  max-width: none;
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(280px, 0.7fr);
+  align-items: end;
+  gap: 4rem;
+}
+
+.syrum-section-heading--split h2 {
+  max-width: 13ch;
+}
+
+.syrum-section-heading--split > p {
+  margin: 0 0 0.5rem;
+}
+
+.syrum-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.syrum-feature-grid article {
+  position: relative;
+  min-height: 23rem;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  overflow: hidden;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1.3rem;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgb(91 68 208 / 12%),
+      transparent 18rem
+    ),
+    rgb(255 255 255 / 2.2%);
+}
+
+.syrum-feature-number {
+  color: rgb(134 113 241);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.syrum-feature-grid h3 {
+  max-width: 22rem;
+  margin: 5rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.syrum-feature-grid article > p {
+  max-width: 30rem;
+  margin: 1rem 0 0;
+  color: rgb(141 146 164);
+  line-height: 1.7;
+}
+
+.syrum-feature-grid ul,
+.syrum-automation-commercial-copy ul {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.syrum-feature-grid li,
+.syrum-automation-commercial-copy li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgb(190 194 208);
+  font-size: 0.78rem;
+}
+
+.syrum-feature-grid li > span,
+.syrum-automation-commercial-copy li > svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex: 0 0 auto;
+}
+
+.syrum-feature-grid li > span {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(115 87 255 / 10%);
+  color: rgb(157 139 255);
+}
+
+.syrum-feature-grid svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.syrum-channel-section {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-channel-layout,
+.syrum-automation-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(520px, 1.2fr);
+  align-items: center;
+  gap: clamp(4rem, 8vw, 9rem);
+}
+
+.syrum-channel-copy h2,
+.syrum-automation-commercial-copy h2 {
+  max-width: 11ch;
+}
+
+.syrum-channel-points {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.syrum-channel-points span {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgb(190 194 208);
+  font-size: 0.82rem;
+}
+
+.syrum-channel-points svg {
+  width: 1rem;
+  height: 1rem;
+  color: rgb(136 115 246);
+}
+
+.syrum-channel-visual {
+  position: relative;
+  min-height: 39rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1.6rem;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgb(98 72 222 / 13%),
+      transparent 18rem
+    ),
+    rgb(255 255 255 / 2%);
+}
+
+.syrum-channel-center {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid rgb(136 111 255 / 23%);
+  border-radius: 2rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(45 39 81),
+      rgb(19 24 44)
+    );
+  box-shadow:
+    0 25px 60px rgb(0 0 0 / 42%),
+    0 0 55px rgb(104 73 230 / 18%);
+  transform: translate(-50%, -50%);
+}
+
+.syrum-channel-center span {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(125 95 250),
+      rgb(48 133 239)
+    );
+  font-family: var(--syrum-font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.syrum-channel-center strong {
+  margin-top: -1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+.syrum-channel-node {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  min-width: 12rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 0.9rem;
+  background: rgb(16 18 27 / 90%);
+  box-shadow: 0 16px 35px rgb(0 0 0 / 27%);
+}
+
+.syrum-channel-node > span {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.65rem;
+  background: rgb(115 87 255 / 12%);
+  color: rgb(166 150 255);
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.syrum-channel-node > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.syrum-channel-node strong {
+  font-size: 0.68rem;
+}
+
+.syrum-channel-node small {
+  color: rgb(123 129 148);
+  font-size: 0.54rem;
+}
+
+.syrum-channel-node--whatsapp {
+  top: 10%;
+  left: 8%;
+}
+
+.syrum-channel-node--instagram {
+  top: 13%;
+  right: 7%;
+}
+
+.syrum-channel-node--web {
+  bottom: 11%;
+  left: 9%;
+}
+
+.syrum-channel-node--team {
+  right: 8%;
+  bottom: 13%;
+}
+
+.syrum-channel-line {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 27%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(116 90 233 / 6%),
+      rgb(116 90 233 / 45%),
+      rgb(51 139 243 / 10%)
+    );
+  transform-origin: left center;
+}
+
+.syrum-channel-line--one {
+  transform: rotate(-136deg);
+}
+
+.syrum-channel-line--two {
+  transform: rotate(-42deg);
+}
+
+.syrum-channel-line--three {
+  transform: rotate(137deg);
+}
+
+.syrum-channel-line--four {
+  transform: rotate(42deg);
+}
+
+.syrum-automation-section {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-automation-layout {
+  grid-template-columns:
+    minmax(520px, 1.15fr)
+    minmax(0, 0.85fr);
+}
+
+.syrum-automation-commercial-visual {
+  display: grid;
+  place-items: center;
+  min-height: 38rem;
+  padding: 3rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1.6rem;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgb(44 125 226 / 10%),
+      transparent 19rem
+    ),
+    rgb(255 255 255 / 2%);
+}
+
+.syrum-flow-card {
+  width: min(100%, 25rem);
+  padding: 1.2rem;
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 1rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(28 30 43),
+      rgb(14 16 24)
+    );
+  box-shadow: 0 18px 40px rgb(0 0 0 / 30%);
+}
+
+.syrum-flow-card > span {
+  color: rgb(140 119 245);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.syrum-flow-card strong,
+.syrum-flow-card small {
+  display: block;
+}
+
+.syrum-flow-card strong {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+}
+
+.syrum-flow-card small {
+  margin-top: 0.3rem;
+  color: rgb(125 131 149);
+  font-size: 0.58rem;
+}
+
+.syrum-flow-card--condition {
+  margin-left: 5rem;
+}
+
+.syrum-flow-card--action {
+  margin-right: 3rem;
+  border-color: rgb(67 151 255 / 18%);
+}
+
+.syrum-flow-connector {
+  display: block;
+  width: 1px;
+  height: 3rem;
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(115 87 255 / 12%),
+      rgb(75 148 244 / 55%),
+      rgb(115 87 255 / 12%)
+    );
+}
+
+.syrum-automation-commercial-copy ul {
+  margin-top: 2rem;
+}
+
+.syrum-automation-commercial-copy li > svg {
+  color: rgb(100 164 250);
+}
+
+.syrum-white-label-commercial {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-white-label-card {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(440px, 1.1fr);
+  gap: 4rem;
+  padding: clamp(2rem, 5vw, 5rem);
+  overflow: hidden;
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgb(91 64 221 / 18%),
+      transparent 30rem
+    ),
+    linear-gradient(
+      145deg,
+      rgb(22 23 34),
+      rgb(10 11 17)
+    );
+}
+
+.syrum-white-label-card h2 {
+  max-width: 12ch;
+  font-size:
+    clamp(2.4rem, 4.5vw, 4.5rem);
+}
+
+.syrum-white-label-card a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  color: rgb(178 163 255);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.syrum-white-label-card a svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.syrum-white-label-samples {
+  position: relative;
+  min-height: 30rem;
+}
+
+.syrum-brand-sample {
+  position: absolute;
+  display: flex;
+  width: min(100%, 22rem);
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 1rem;
+  background: rgb(15 17 26 / 94%);
+  box-shadow: 0 25px 55px rgb(0 0 0 / 35%);
+}
+
+.syrum-brand-sample > span {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 0.85rem;
+  color: white;
+  font-weight: 800;
+}
+
+.syrum-brand-sample > div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.syrum-brand-sample strong {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.syrum-brand-sample small {
+  color: rgb(128 134 151);
+  font-size: 0.58rem;
+}
+
+.syrum-brand-sample--one {
+  top: 1rem;
+  right: 0;
+  transform: rotate(3deg);
+}
+
+.syrum-brand-sample--one > span {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(55 144 247),
+      rgb(100 76 226)
+    );
+}
+
+.syrum-brand-sample--two {
+  top: 10rem;
+  left: 0;
+  transform: rotate(-4deg);
+}
+
+.syrum-brand-sample--two > span {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(31 193 186),
+      rgb(41 109 204)
+    );
+}
+
+.syrum-brand-sample--three {
+  right: 1.5rem;
+  bottom: 1.5rem;
+  transform: rotate(2deg);
+}
+
+.syrum-brand-sample--three > span {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(205 89 188),
+      rgb(108 71 214)
+    );
+}
+
+.syrum-implementation-section {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-section-heading--center {
+  max-width: 50rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.syrum-section-heading--center > span {
+  justify-content: center;
+}
+
+.syrum-section-heading--center > p {
+  margin-inline: auto;
+}
+
+.syrum-implementation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.syrum-implementation-grid article {
+  min-height: 17rem;
+  padding: 1.6rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1.1rem;
+  background: rgb(255 255 255 / 2%);
+}
+
+.syrum-implementation-grid article > span {
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  place-items: center;
+  border-radius: 0.7rem;
+  background: rgb(115 87 255 / 10%);
+  color: rgb(155 137 255);
+  font-size: 0.63rem;
+  font-weight: 800;
+}
+
+.syrum-implementation-grid h3 {
+  margin: 3.5rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.syrum-implementation-grid p {
+  margin: 0.8rem 0 0;
+  color: rgb(137 142 160);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.syrum-security-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 1rem;
+  overflow: hidden;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 1rem;
+  background: rgb(244 245 247 / 7%);
+}
+
+.syrum-security-strip div {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem;
+  background: rgb(12 13 19);
+}
+
+.syrum-security-strip span {
+  color: rgb(128 134 151);
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.syrum-security-strip strong {
+  font-size: 0.72rem;
+}
+
+.syrum-faq-section {
+  border-top:
+    1px solid
+    rgb(244 245 247 / 5%);
+}
+
+.syrum-faq-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr)
+    minmax(500px, 1.28fr);
+  gap: clamp(4rem, 8vw, 9rem);
+}
+
+.syrum-faq-heading {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+
+.syrum-faq-heading h2 {
+  max-width: 11ch;
+  font-size:
+    clamp(2.3rem, 4vw, 4.2rem);
+}
+
+.syrum-faq-list {
+  border-top: 1px solid rgb(244 245 247 / 8%);
+}
+
+.syrum-faq-list details {
+  border-bottom: 1px solid rgb(244 245 247 / 8%);
+}
+
+.syrum-faq-list summary {
+  display: flex;
+  min-height: 5.8rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  color: rgb(218 220 229);
+  font-size: 0.92rem;
+  list-style: none;
+}
+
+.syrum-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.syrum-faq-list summary i {
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 auto;
+}
+
+.syrum-faq-list summary i::before,
+.syrum-faq-list summary i::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.8rem;
+  height: 1px;
+  background: rgb(145 128 232);
+  transform: translate(-50%, -50%);
+}
+
+.syrum-faq-list summary i::after {
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+  transition: transform 180ms ease;
+}
+
+.syrum-faq-list details[open] summary i::after {
+  transform:
+    translate(-50%, -50%)
+    rotate(0);
+}
+
+.syrum-faq-list details > p {
+  max-width: 44rem;
+  margin: -0.5rem 0 2rem;
+  color: rgb(139 144 162);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.syrum-final-cta {
+  padding-bottom:
+    clamp(4rem, 8vw, 7rem) !important;
+}
+
+.syrum-final-cta-card {
+  position: relative;
+  min-height: 37rem;
+  display: grid;
+  place-content: center;
+  padding: 3rem;
+  overflow: hidden;
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgb(107 75 235 / 20%),
+      transparent 29rem
+    ),
+    linear-gradient(
+      145deg,
+      rgb(20 21 32),
+      rgb(8 9 14)
+    );
+  text-align: center;
+}
+
+.syrum-final-cta-glow {
+  position: absolute;
+  top: -18rem;
+  left: 50%;
+  width: 38rem;
+  height: 38rem;
+  border-radius: 50%;
+  background: rgb(99 70 225 / 17%);
+  filter: blur(85px);
+  transform: translateX(-50%);
+}
+
+.syrum-final-cta-card > span,
+.syrum-final-cta-card > h2,
+.syrum-final-cta-card > p,
+.syrum-final-cta-card > div:last-child {
+  position: relative;
+  z-index: 2;
+}
+
+.syrum-final-cta-card > span {
+  color: rgb(165 147 255);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.syrum-final-cta-card h2 {
+  max-width: 14ch;
+  margin-inline: auto;
+}
+
+.syrum-final-cta-card > p {
+  margin-inline: auto;
+}
+
+.syrum-final-cta-card > div:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.syrum-final-cta-card a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgb(244 245 247 / 11%);
+  border-radius: 0.75rem;
+  color: rgb(218 220 229);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.syrum-final-cta-card a:first-child {
+  border-color: rgb(124 96 245 / 35%);
+  background:
+    linear-gradient(
+      135deg,
+      rgb(112 82 238),
+      rgb(45 126 232)
+    );
+  color: white;
+  box-shadow: 0 15px 35px rgb(80 69 216 / 24%);
+}
+
+.syrum-final-cta-card a svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.syrum-commercial-footer {
+  border-top: 1px solid rgb(244 245 247 / 7%);
+}
+
+.syrum-commercial-footer .syrum-commercial-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  min-height: 9rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.syrum-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.syrum-footer-brand > span {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border-radius: 0.7rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(117 88 245),
+      rgb(47 132 237)
+    );
+  font-family: var(--syrum-font-heading);
+  font-weight: 700;
+}
+
+.syrum-footer-brand > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.syrum-footer-brand strong {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.syrum-footer-brand small {
+  color: rgb(119 125 143);
+  font-size: 0.52rem;
+}
+
+.syrum-commercial-footer nav {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.syrum-commercial-footer nav a {
+  color: rgb(139 144 161);
+  font-size: 0.62rem;
+  text-decoration: none;
+}
+
+.syrum-footer-copy {
+  justify-self: end;
+  color: rgb(105 111 128);
+  font-size: 0.58rem;
+}
+
+@media (max-width: 900px) {
+  .syrum-section-heading--split,
+  .syrum-channel-layout,
+  .syrum-automation-layout,
+  .syrum-white-label-card,
+  .syrum-faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .syrum-section-heading--split {
+    gap: 1.5rem;
+  }
+
+  .syrum-section-heading--split > p {
+    margin: 0;
+  }
+
+  .syrum-channel-visual,
+  .syrum-automation-commercial-visual {
+    min-height: 32rem;
+  }
+
+  .syrum-white-label-samples {
+    min-height: 27rem;
+  }
+
+  .syrum-faq-heading {
+    position: static;
+  }
+
+  .syrum-commercial-footer .syrum-commercial-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-block: 2.5rem;
+    text-align: center;
+  }
+
+  .syrum-footer-copy {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .syrum-commercial-container {
+    width: min(
+      calc(100% - 1.25rem),
+      1280px
+    );
+  }
+
+  .syrum-commercial section {
+    padding-block: 5.5rem;
+  }
+
+  .syrum-benefit-grid,
+  .syrum-feature-grid,
+  .syrum-implementation-grid,
+  .syrum-security-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .syrum-benefit-grid {
+    margin-top: 2.5rem;
+  }
+
+  .syrum-benefit-grid article {
+    min-height: 14rem;
+  }
+
+  .syrum-benefit-grid h3 {
+    margin-top: 3rem;
+  }
+
+  .syrum-feature-grid {
+    margin-top: 2.5rem;
+  }
+
+  .syrum-feature-grid article {
+    min-height: auto;
+  }
+
+  .syrum-feature-grid h3 {
+    margin-top: 3rem;
+  }
+
+  .syrum-channel-visual {
+    min-height: 34rem;
+  }
+
+  .syrum-channel-node {
+    min-width: 10rem;
+  }
+
+  .syrum-channel-node--whatsapp,
+  .syrum-channel-node--web {
+    left: 1rem;
+  }
+
+  .syrum-channel-node--instagram,
+  .syrum-channel-node--team {
+    right: 1rem;
+  }
+
+  .syrum-automation-commercial-visual {
+    min-height: 30rem;
+    padding: 1rem;
+  }
+
+  .syrum-flow-card--condition {
+    margin-left: 1.5rem;
+  }
+
+  .syrum-flow-card--action {
+    margin-right: 1.5rem;
+  }
+
+  .syrum-white-label-card {
+    gap: 2rem;
+    padding: 1.2rem;
+  }
+
+  .syrum-white-label-samples {
+    min-height: 25rem;
+  }
+
+  .syrum-brand-sample {
+    width: 88%;
+  }
+
+  .syrum-implementation-grid {
+    margin-top: 2.5rem;
+  }
+
+  .syrum-security-strip {
+    gap: 1px;
+  }
+
+  .syrum-final-cta-card {
+    min-height: 32rem;
+    padding: 1.5rem;
+  }
+
+  .syrum-final-cta-card > div:last-child {
+    flex-direction: column;
+  }
+
+  .syrum-commercial-footer nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .syrum-commercial *,
+  .syrum-commercial *::before,
+  .syrum-commercial *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   AJUSTE RESPONSIVO — SEÇÕES COMERCIAIS COMPACTAS
+   ========================================================= */
+
+/*
+ * Desktop e notebook:
+ * reduz títulos, espaços e altura dos cards sem alterar mobile.
+ */
+@media (min-width: 1081px) {
+  .syrum-commercial section {
+    padding-block: clamp(4.5rem, 7vh, 6.5rem);
+  }
+
+  .syrum-section-heading {
+    max-width: 48rem;
+  }
+
+  .syrum-section-heading h2,
+  .syrum-channel-copy h2,
+  .syrum-automation-commercial-copy h2,
+  .syrum-white-label-card h2,
+  .syrum-faq-heading h2,
+  .syrum-final-cta-card h2 {
+    margin-top: 0.9rem;
+    font-size: clamp(2.5rem, 4vw, 4.25rem);
+    line-height: 0.96;
+  }
+
+  .syrum-section-heading > p,
+  .syrum-channel-copy > p,
+  .syrum-automation-commercial-copy > p,
+  .syrum-white-label-card > div > p,
+  .syrum-faq-heading > p,
+  .syrum-final-cta-card > p {
+    max-width: 39rem;
+    margin-top: 1.15rem;
+    font-size: clamp(0.9rem, 1vw, 1.02rem);
+    line-height: 1.6;
+  }
+
+  .syrum-benefit-grid {
+    gap: 0.85rem;
+    margin-top: 2.5rem;
+  }
+
+  .syrum-benefit-grid article {
+    min-height: 13.5rem;
+    padding: 1.4rem;
+  }
+
+  .syrum-benefit-grid h3 {
+    margin-top: 3rem;
+    font-size: 1.28rem;
+  }
+
+  .syrum-benefit-grid p {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .syrum-feature-grid {
+    gap: 0.85rem;
+    margin-top: 2.6rem;
+  }
+
+  .syrum-feature-grid article {
+    min-height: 19rem;
+    padding: clamp(1.3rem, 2.2vw, 1.9rem);
+  }
+
+  .syrum-feature-grid h3 {
+    margin-top: 3.2rem;
+    font-size: clamp(1.4rem, 2.1vw, 2rem);
+  }
+
+  .syrum-feature-grid article > p {
+    margin-top: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .syrum-feature-grid ul,
+  .syrum-automation-commercial-copy ul {
+    gap: 0.55rem;
+    margin-top: 1.2rem;
+  }
+
+  .syrum-channel-layout,
+  .syrum-automation-layout {
+    gap: clamp(3rem, 5vw, 6rem);
+  }
+}
+
+/*
+ * Notebook sem F11:
+ * tenta manter título, descrição e cards dentro da mesma tela.
+ */
+@media
+  (min-width: 1081px)
+  and (max-height: 900px) {
+
+  .syrum-commercial section {
+    padding-block: 3.6rem;
+  }
+
+  .syrum-section-heading h2,
+  .syrum-channel-copy h2,
+  .syrum-automation-commercial-copy h2,
+  .syrum-white-label-card h2,
+  .syrum-faq-heading h2,
+  .syrum-final-cta-card h2 {
+    font-size: clamp(2.25rem, 3.45vw, 3.6rem);
+  }
+
+  .syrum-section-heading > p,
+  .syrum-channel-copy > p,
+  .syrum-automation-commercial-copy > p,
+  .syrum-white-label-card > div > p,
+  .syrum-faq-heading > p,
+  .syrum-final-cta-card > p {
+    margin-top: 0.9rem;
+    font-size: 0.91rem;
+    line-height: 1.5;
+  }
+
+  .syrum-benefit-grid {
+    margin-top: 2rem;
+  }
+
+  .syrum-benefit-grid article {
+    min-height: 11.8rem;
+    padding: 1.2rem;
+  }
+
+  .syrum-benefit-grid h3 {
+    margin-top: 2.15rem;
+    font-size: 1.15rem;
+  }
+
+  .syrum-benefit-grid p {
+    margin-top: 0.6rem;
+    font-size: 0.77rem;
+    line-height: 1.45;
+  }
+
+  .syrum-feature-grid {
+    margin-top: 2rem;
+  }
+
+  .syrum-feature-grid article {
+    min-height: 16.5rem;
+  }
+
+  .syrum-feature-grid h3 {
+    margin-top: 2.4rem;
+  }
+}
+
+/*
+ * Telas desktop muito baixas.
+ */
+@media
+  (min-width: 1081px)
+  and (max-height: 760px) {
+
+  .syrum-commercial section {
+    padding-block: 2.8rem;
+  }
+
+  .syrum-section-heading h2,
+  .syrum-channel-copy h2,
+  .syrum-automation-commercial-copy h2,
+  .syrum-white-label-card h2,
+  .syrum-faq-heading h2,
+  .syrum-final-cta-card h2 {
+    font-size: clamp(2rem, 3vw, 3.1rem);
+  }
+
+  .syrum-benefit-grid {
+    margin-top: 1.5rem;
+  }
+
+  .syrum-benefit-grid article {
+    min-height: 10.2rem;
+  }
+
+  .syrum-benefit-grid h3 {
+    margin-top: 1.5rem;
+  }
+}
+
+/* =========================================================
+   RECURSOS ESSENCIAIS — CONTEÚDO COMPLETO EM UMA TELA
+   ========================================================= */
+
+/*
+ * Desktop amplo:
+ * frase e quatro cards aparecem juntos na mesma tela.
+ */
+@media (min-width: 1280px) {
+  .syrum-feature-section {
+    padding-block: clamp(2.2rem, 4vh, 3.5rem) !important;
+  }
+
+  .syrum-feature-section .syrum-section-heading--split {
+    grid-template-columns:
+      minmax(0, 0.75fr)
+      minmax(260px, 0.35fr);
+
+    align-items: end;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .syrum-feature-section
+    .syrum-section-heading--split h2 {
+    max-width: 9ch;
+    margin-top: 0.65rem;
+    font-size: clamp(2.65rem, 3.7vw, 4rem);
+    line-height: 0.92;
+  }
+
+  .syrum-feature-section
+    .syrum-section-heading--split > p {
+    max-width: 23rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .syrum-feature-section .syrum-feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.8rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid article {
+    min-height: 14rem;
+    padding: 1.2rem;
+    border-radius: 1rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid h3 {
+    max-width: 15rem;
+    margin-top: 2rem;
+    font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+    line-height: 1.05;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid article > p {
+    margin-top: 0.65rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid ul {
+    gap: 0.38rem;
+    margin-top: 0.85rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid li {
+    gap: 0.42rem;
+    font-size: 0.68rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid li > span {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/*
+ * Notebook sem F11.
+ */
+@media
+  (min-width: 1280px)
+  and (max-height: 850px) {
+
+  .syrum-feature-section {
+    padding-block: 1.7rem !important;
+  }
+
+  .syrum-feature-section
+    .syrum-section-heading--split h2 {
+    font-size: clamp(2.3rem, 3.25vw, 3.45rem);
+  }
+
+  .syrum-feature-section
+    .syrum-section-heading--split > p {
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+
+  .syrum-feature-section .syrum-feature-grid {
+    margin-top: 1.25rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid article {
+    min-height: 12.5rem;
+    padding: 1rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid h3 {
+    margin-top: 1.4rem;
+    font-size: 1.18rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid article > p {
+    font-size: 0.72rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid ul {
+    margin-top: 0.65rem;
+  }
+}
+
+/*
+ * Larguras intermediárias continuam em duas colunas,
+ * mas com os cards mais compactos.
+ */
+@media
+  (min-width: 1081px)
+  and (max-width: 1279px) {
+
+  .syrum-feature-section {
+    padding-block: 2.5rem !important;
+  }
+
+  .syrum-feature-section .syrum-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid article {
+    min-height: 11rem;
+    padding: 1.15rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid h3 {
+    margin-top: 1.4rem;
+    font-size: 1.25rem;
+  }
+
+  .syrum-feature-section
+    .syrum-feature-grid ul {
+    margin-top: 0.7rem;
+  }
+}

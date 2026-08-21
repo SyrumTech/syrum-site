@@ -1,0 +1,491 @@
+.syrum-lead-section {
+  position: relative;
+  border-top: 1px solid rgb(244 245 247 / 5%);
+}
+
+.syrum-lead-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 0.65fr)
+    minmax(560px, 1.35fr);
+  align-items: start;
+  gap: clamp(3rem, 7vw, 8rem);
+}
+
+.syrum-lead-copy {
+  position: sticky;
+  top: 8rem;
+}
+
+.syrum-lead-copy h2 {
+  max-width: 10ch;
+  margin: 1.2rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 4.7rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.syrum-lead-copy > p {
+  max-width: 32rem;
+  margin: 1.4rem 0 0;
+  color: rgb(145 150 168);
+  line-height: 1.75;
+}
+
+.syrum-lead-contact-options {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.syrum-lead-contact-options a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgb(244 245 247 / 8%);
+  border-radius: 0.8rem;
+  background: rgb(255 255 255 / 2%);
+  color: rgb(196 199 211);
+  font-size: 0.7rem;
+  text-decoration: none;
+}
+
+.syrum-lead-contact-options small {
+  color: rgb(120 126 145);
+  font-size: 0.55rem;
+}
+
+.syrum-lead-form {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2.2rem);
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 1.4rem;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgb(99 70 225 / 11%),
+      transparent 22rem
+    ),
+    linear-gradient(
+      145deg,
+      rgb(20 22 32),
+      rgb(10 11 17)
+    );
+  box-shadow: 0 30px 80px rgb(0 0 0 / 32%);
+}
+
+.syrum-lead-form-heading span {
+  color: rgb(157 138 255);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.syrum-lead-form-heading h3 {
+  margin: 0.8rem 0 0;
+  font-family: var(--syrum-font-heading);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.syrum-lead-form-heading p {
+  max-width: 40rem;
+  margin: 0.8rem 0 0;
+  color: rgb(137 142 160);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.syrum-lead-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.syrum-lead-form-grid label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.syrum-lead-form-grid label > span {
+  color: rgb(178 182 197);
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.syrum-lead-form input,
+.syrum-lead-form select,
+.syrum-lead-form textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem;
+  border: 1px solid rgb(244 245 247 / 9%);
+  border-radius: 0.7rem;
+  outline: none;
+  background: rgb(6 8 13 / 58%);
+  color: rgb(226 228 237);
+  font: inherit;
+  font-size: 0.72rem;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.syrum-lead-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.syrum-lead-form input::placeholder,
+.syrum-lead-form textarea::placeholder {
+  color: rgb(94 100 118);
+}
+
+.syrum-lead-form input:focus,
+.syrum-lead-form select:focus,
+.syrum-lead-form textarea:focus {
+  border-color: rgb(124 99 242 / 50%);
+  background: rgb(8 10 17 / 78%);
+  box-shadow: 0 0 0 3px rgb(115 87 255 / 9%);
+}
+
+.syrum-lead-form select {
+  color-scheme: dark;
+}
+
+.syrum-lead-form-message {
+  grid-column: 1 / -1;
+}
+
+.syrum-lead-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  color: rgb(136 141 159);
+  font-size: 0.61rem;
+  line-height: 1.5;
+}
+
+.syrum-lead-form-consent input {
+  width: 1rem;
+  min-height: 1rem;
+  margin-top: 0.1rem;
+  accent-color: rgb(115 87 255);
+}
+
+.syrum-lead-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.syrum-lead-form-footer button {
+  display: inline-flex;
+  min-height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgb(125 97 245 / 36%);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(
+      135deg,
+      rgb(112 82 238),
+      rgb(45 126 232)
+    );
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 32px rgb(80 69 216 / 24%);
+}
+
+.syrum-lead-form-footer button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.syrum-lead-form-footer button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.syrum-lead-form-status {
+  margin: 0;
+  color: rgb(139 144 162);
+  font-size: 0.64rem;
+}
+
+.syrum-lead-form-status--success {
+  color: rgb(102 219 175);
+}
+
+.syrum-lead-form-status--error {
+  color: rgb(244 132 140);
+}
+
+.syrum-lead-form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .syrum-lead-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .syrum-lead-copy {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .syrum-lead-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .syrum-lead-form-message {
+    grid-column: auto;
+  }
+
+  .syrum-lead-form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .syrum-lead-form-footer button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   FORMULÁRIO COMERCIAL — CONTEÚDO COMPLETO EM UMA TELA
+   ========================================================= */
+
+@media (min-width: 1081px) {
+  .syrum-lead-section {
+    padding-block: clamp(2.5rem, 5vh, 4.5rem) !important;
+  }
+
+  .syrum-lead-layout {
+    grid-template-columns:
+      minmax(260px, 0.58fr)
+      minmax(580px, 1.42fr);
+
+    gap: clamp(2.5rem, 5vw, 5.5rem);
+  }
+
+  .syrum-lead-copy {
+    top: 5.5rem;
+  }
+
+  .syrum-lead-copy h2 {
+    max-width: 9ch;
+    margin-top: 0.8rem;
+    font-size: clamp(2.6rem, 3.6vw, 3.8rem);
+    line-height: 0.94;
+  }
+
+  .syrum-lead-copy > p {
+    max-width: 27rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .syrum-lead-contact-options {
+    gap: 0.55rem;
+    margin-top: 1.4rem;
+  }
+
+  .syrum-lead-contact-options a {
+    padding: 0.72rem 0.8rem;
+  }
+
+  .syrum-lead-form {
+    padding: 1.35rem;
+    border-radius: 1.15rem;
+  }
+
+  .syrum-lead-form-heading h3 {
+    margin-top: 0.5rem;
+    font-size: clamp(1.55rem, 2.25vw, 2.15rem);
+  }
+
+  .syrum-lead-form-heading p {
+    margin-top: 0.5rem;
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+
+  .syrum-lead-form-grid {
+    gap: 0.65rem 0.75rem;
+    margin-top: 1.2rem;
+  }
+
+  .syrum-lead-form-grid label {
+    gap: 0.3rem;
+  }
+
+  .syrum-lead-form input,
+  .syrum-lead-form select,
+  .syrum-lead-form textarea {
+    min-height: 2.55rem;
+    padding: 0.65rem 0.72rem;
+  }
+
+  .syrum-lead-form textarea {
+    min-height: 5.4rem;
+  }
+
+  .syrum-lead-form-consent {
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+  }
+
+  .syrum-lead-form-footer {
+    gap: 0.75rem;
+    margin-top: 0.8rem;
+  }
+
+  .syrum-lead-form-footer button {
+    min-height: 2.65rem;
+    padding: 0.62rem 1rem;
+  }
+}
+
+/* Notebook e janela sem F11 */
+@media
+  (min-width: 1081px)
+  and (max-height: 850px) {
+
+  .syrum-lead-section {
+    padding-block: 1.8rem !important;
+  }
+
+  .syrum-lead-layout {
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .syrum-lead-copy {
+    top: 4rem;
+  }
+
+  .syrum-lead-copy h2 {
+    font-size: clamp(2.3rem, 3.15vw, 3.25rem);
+  }
+
+  .syrum-lead-copy > p {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .syrum-lead-contact-options {
+    margin-top: 1rem;
+  }
+
+  .syrum-lead-contact-options a {
+    padding: 0.58rem 0.7rem;
+  }
+
+  .syrum-lead-form {
+    padding: 1rem 1.15rem;
+  }
+
+  .syrum-lead-form-heading h3 {
+    margin-top: 0.35rem;
+    font-size: 1.75rem;
+  }
+
+  .syrum-lead-form-heading p {
+    margin-top: 0.35rem;
+    font-size: 0.69rem;
+  }
+
+  .syrum-lead-form-grid {
+    gap: 0.48rem 0.65rem;
+    margin-top: 0.8rem;
+  }
+
+  .syrum-lead-form input,
+  .syrum-lead-form select,
+  .syrum-lead-form textarea {
+    min-height: 2.3rem;
+    padding: 0.52rem 0.65rem;
+    font-size: 0.68rem;
+  }
+
+  .syrum-lead-form textarea {
+    min-height: 4.4rem;
+  }
+
+  .syrum-lead-form-consent {
+    margin-top: 0.5rem;
+  }
+
+  .syrum-lead-form-footer {
+    margin-top: 0.55rem;
+  }
+
+  .syrum-lead-form-footer button {
+    min-height: 2.4rem;
+  }
+}
+
+/* Telas desktop ainda mais baixas */
+@media
+  (min-width: 1081px)
+  and (max-height: 740px) {
+
+  .syrum-lead-section {
+    padding-block: 1.25rem !important;
+  }
+
+  .syrum-lead-copy h2 {
+    font-size: clamp(2.05rem, 2.8vw, 2.85rem);
+  }
+
+  .syrum-lead-form {
+    padding: 0.85rem 1rem;
+  }
+
+  .syrum-lead-form-grid {
+    margin-top: 0.65rem;
+  }
+
+  .syrum-lead-form textarea {
+    min-height: 3.8rem;
+  }
+}
+
+/* =========================================================
+   FORMULÁRIO — COLUNA ESQUERDA CENTRALIZADA
+   ========================================================= */
+
+@media (min-width: 1081px) {
+  .syrum-lead-layout {
+    align-items: center;
+  }
+
+  .syrum-lead-copy {
+    position: static;
+    top: auto;
+    align-self: center;
+  }
+}
