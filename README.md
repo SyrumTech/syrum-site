@@ -1,12 +1,12 @@
 # Syrum Site
 
-Site institucional da Syrum. Este repositório é independente do CRM e foi preparado para publicação no Cloudflare Pages.
+Site institucional da Syrum. Este repositório é independente do CRM e foi preparado para publicação pelo Cloudflare Workers Builds com Static Assets.
 
 - Site: `https://syrum.com.br`
 - CRM: `https://app.syrum.com.br`
 - API do CRM: `https://api.syrum.com.br`
 
-O site é exportado como arquivos estáticos para `out/`. A única parte dinâmica é `POST /api/leads`, executada na rede da Cloudflare por uma Pages Function. Nenhum processo deste repositório precisa rodar na VPS do CRM.
+O site é exportado como arquivos estáticos para `out/`. O Worker entrega esses assets e executa `POST /api/leads`. Nenhum processo deste repositório precisa rodar na VPS do CRM.
 
 ## Desenvolvimento
 
@@ -26,22 +26,21 @@ npm run check:functions
 npm run build
 ```
 
-O build precisa produzir `out/index.html`, `out/_headers` e `out/_routes.json`.
+O build precisa produzir `out/index.html`. `npm run deploy:dry-run` valida o Worker, o entrypoint e o diretório de assets sem publicar.
 
-## Cloudflare Pages
+## Cloudflare Workers Builds
 
-Ao importar `SyrumTech/syrum-site` no Cloudflare Pages, use:
+Ao importar `SyrumTech/syrum-site` em **Workers & Pages → Create application → Continue with GitHub**, use:
 
 | Campo | Valor |
 | --- | --- |
 | Branch de produção | `main` |
-| Framework preset | `Next.js (Static HTML Export)` |
 | Build command | `npm run build` |
-| Build output directory | `out` |
+| Deploy command | `npx wrangler deploy` |
+| Preview deploy command | `npx wrangler versions upload` |
 | Root directory | `/` |
-| Node.js | `22` |
 
-Configure no Pages, em **Settings → Variables and Secrets**:
+Configure no Worker, em **Settings → Variables and Secrets**:
 
 - `NEXT_PUBLIC_SITE_URL=https://syrum.com.br`
 - `SYRUM_LEADS_API_URL`: endpoint HTTPS que recebe os leads.
@@ -49,7 +48,7 @@ Configure no Pages, em **Settings → Variables and Secrets**:
 
 O token nunca deve ser criado como variável pública nem incluído no Git.
 
-O roteiro completo de publicação, domínio, rollback e validação está em [docs/cloudflare-pages.md](docs/cloudflare-pages.md).
+O roteiro completo de publicação, domínio, rollback e validação está em [docs/cloudflare-workers.md](docs/cloudflare-workers.md).
 
 ## Limites do repositório
 

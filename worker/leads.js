@@ -37,9 +37,11 @@ function validateLead(payload) {
   return lead;
 }
 
-export async function onRequestPost(context) {
-  const contentType = context.request.headers.get('content-type') ?? '';
-  const contentLength = Number(context.request.headers.get('content-length') ?? '0');
+export async function handleLeadRequest(request, env) {
+  if (request.method !== 'POST')
+    return json({ success: false, message: 'Método não permitido.' }, 405);
+  const contentType = request.headers.get('content-type') ?? '';
+  const contentLength = Number(request.headers.get('content-length') ?? '0');
   if (!contentType.toLowerCase().includes('application/json'))
     return json({ success: false, message: 'Formato de requisição inválido.' }, 415);
   if (Number.isFinite(contentLength) && contentLength > maximumPayloadBytes)
@@ -47,7 +49,7 @@ export async function onRequestPost(context) {
 
   let payload;
   try {
-    const raw = await context.request.text();
+    const raw = await request.text();
     if (new TextEncoder().encode(raw).byteLength > maximumPayloadBytes)
       return json({ success: false, message: 'Solicitação muito grande.' }, 413);
     payload = JSON.parse(raw);
@@ -59,7 +61,7 @@ export async function onRequestPost(context) {
   if (!lead)
     return json({ success: false, message: 'Revise os campos obrigatórios e tente novamente.' }, 400);
 
-  const endpoint = context.env.SYRUM_LEADS_API_URL?.trim();
+  const endpoint = env.SYRUM_LEADS_API_URL?.trim();
   if (!endpoint)
     return json({ success: false, message: 'Canal comercial temporariamente indisponível.' }, 503);
 
@@ -77,9 +79,7 @@ export async function onRequestPost(context) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(context.env.SYRUM_LEADS_API_TOKEN
-          ? { Authorization: `Bearer ${context.env.SYRUM_LEADS_API_TOKEN}` }
-          : {}),
+        ...(env.SYRUM_LEADS_API_TOKEN ? { Authorization: `Bearer ${env.SYRUM_LEADS_API_TOKEN}` } : {}),
       },
       body: JSON.stringify(lead),
       signal: AbortSignal.timeout(8_000),
@@ -90,8 +90,4 @@ export async function onRequestPost(context) {
     console.error('[syrum-site leads]', error instanceof Error ? error.message : 'forwarding failed');
     return json({ success: false, message: 'Não foi possível registrar a solicitação agora.' }, 502);
   }
-}
-
-export function onRequest() {
-  return json({ success: false, message: 'Método não permitido.' }, 405);
 }
