@@ -23,6 +23,7 @@ import './landing/styles/hero-consolidated.css';
 import './landing/styles/header-scroll-fade.css';
 import './landing/styles/logo-animation-lab.css';
 import './landing/styles/logo-focus-mode.css';
+import './landing/styles/cinematic-runtime.css';
 export const metadata: Metadata = {
   title: 'SYRUM — Toda a sua operação em um único fluxo.',
   description:

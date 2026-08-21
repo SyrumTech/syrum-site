@@ -172,19 +172,3 @@
     opacity: 0.18;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .syrum-cinematic-stage {
-    overflow: visible;
-  }
-
-  .syrum-cinematic .syrum-hero-symbol {
-    position: absolute;
-  }
-
-  .syrum-cinematic--enhanced .syrum-origin-scene,
-  .syrum-cinematic--enhanced .syrum-symbol-scene {
-    position: relative;
-    inset: auto;
-  }
-}

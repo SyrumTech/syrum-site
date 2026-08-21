@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 type CinematicConditions = {
   desktop?: boolean;
   mobile?: boolean;
-  reduceMotion?: boolean;
 };
 
 export function useCinematicTimeline(
@@ -31,7 +30,6 @@ export function useCinematicTimeline(
         {
           desktop: '(min-width: 721px)',
           mobile: '(max-width: 720px)',
-          reduceMotion: '(prefers-reduced-motion: reduce)',
         },
         (matchContext) => {
           const conditions =
@@ -275,55 +273,6 @@ export function useCinematicTimeline(
             !cinematicOutro ||
             !outroActions
           ) {
-            return;
-          }
-
-          if (conditions?.reduceMotion) {
-            gsap.set(
-              [
-                originContent,
-                symbolCopy,
-                symbolTrajectory,
-                symbolTrajectoryLine,
-                symbolTrajectoryGlow,
-                symbolTrajectoryPoint,
-                conversationIntro,
-                inboxPreview,
-                departmentSelector,
-                routingResult,
-                agentMessage,
-                automationIntro,
-                kanbanPreview,
-                kanbanCard,
-                ...messages,
-                ...departmentOptions,
-                ...automationRules,
-                ...automationEvents,
-                dashboardIntro,
-                dashboardPreview,
-                dashboardChart,
-                dashboardChannels,
-                ...dashboardSummary,
-                ...dashboardMetrics,
-                ...dashboardChannelItems,
-                ...dashboardActivity,
-                whiteLabelContent,
-                brandStudio,
-                brandPreview,
-                brandLogo,
-                cinematicOutro,
-                outroActions,
-                ...whiteLabelFeatures,
-                ...brandPanels,
-                ...brandColors,
-                ...brandMetrics,
-              ],
-              {
-                clearProps: 'all',
-                autoAlpha: 1,
-              },
-            );
-
             return;
           }
 
