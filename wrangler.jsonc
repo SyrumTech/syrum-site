@@ -2,6 +2,12 @@
   "name": "syrum-site",
   "main": "./worker/index.js",
   "compatibility_date": "2026-08-21",
+  "routes": [
+    {
+      "pattern": "syrum.com.br",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
