@@ -125,9 +125,9 @@
 @media (max-width: 560px) { .sy-hero-copy h1 { white-space: normal; } }
 .sy-hero-lead { font-family: var(--font-poppins), sans-serif; font-size: clamp(15px, 2.2cqw, 19px); font-weight: 400; line-height: 1.55; color: #e2e6ef; margin: 20px 0 0; max-width: 46ch; text-shadow: 0 2px 18px rgba(0, 0, 0, .95); animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) 1.05s both; }
 .sy-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) 1.55s both; }
-.sy-hero-symbol-stage { position: relative; display: flex; align-items: center; justify-content: center; min-height: clamp(340px, 38vw, 520px); width: 100%; }
+.sy-hero-symbol-stage { position: relative; display: flex; align-items: center; justify-content: center; min-height: clamp(360px, 44vw, 620px); width: 100%; }
 .sy-hero-symbol {
-  position: relative; width: 62%; max-width: 360px;
+  position: relative; width: 78%; max-width: 480px;
   animation: syrumFadeIn 1100ms cubic-bezier(.22, 1, .36, 1) 1.9s both, syrumFloat 7s ease-in-out 3s infinite;
   transition: transform 1400ms cubic-bezier(.16, 1, .3, 1);
   will-change: transform;
