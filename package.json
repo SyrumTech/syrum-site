@@ -11,7 +11,6 @@
     "deploy:dry-run": "wrangler deploy --dry-run"
   },
   "dependencies": {
-    "gsap": "^3.15.0",
     "next": "^16.3.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
