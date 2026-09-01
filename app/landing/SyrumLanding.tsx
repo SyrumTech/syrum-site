@@ -223,7 +223,7 @@ export default function SyrumLanding({ className }: { className: string }) {
             <p data-reveal="1" className="sy-reveal sy-lead-center">5 etapas que transformam uma operação dispersa em um fluxo previsível de atendimento e vendas.</p>
             <div className="sy-card-grid sy-card-grid-method">
               {methodSteps.map((step, index) => (
-                <article key={step.title} data-reveal={index + 2} data-reveal-slide="true" className="sy-reveal sy-reveal-slide sy-card">
+                <article key={step.title} data-reveal={index + 2} className="sy-reveal sy-card">
                   <div className="sy-card-icon" style={{ background: step.gradient }}>
                     <Icon>{step.icon}</Icon>
                   </div>
@@ -259,11 +259,11 @@ export default function SyrumLanding({ className }: { className: string }) {
 
         <section className="sy-section sy-section-clients">
           <div className="sy-section-inner">
-            <h2 className="sy-h2-center sy-h2-small">empresas que já operam com a syrum</h2>
+            <h2 data-reveal="0" className="sy-reveal sy-h2-center sy-h2-small">empresas que já operam com a syrum</h2>
           </div>
           <div className="sy-marquee-mask">
             <div className="sy-marquee-track">
-              {[...clientLogos, ...clientLogos].map((client, index) => (
+              {Array.from({ length: 8 }, () => clientLogos).flat().map((client, index) => (
                 <div className="sy-marquee-item" key={index}>{client}</div>
               ))}
             </div>
@@ -272,10 +272,10 @@ export default function SyrumLanding({ className }: { className: string }) {
 
         <section id="cases" className="sy-section sy-section-cases">
           <div className="sy-section-inner">
-            <h2 data-reveal="0" data-reveal-slide="true" className="sy-reveal sy-reveal-slide">sua operação em outro nível</h2>
-            <p data-reveal="1" data-reveal-slide="true" className="sy-reveal sy-reveal-slide sy-lead">uma plataforma criada para conectar pessoas, processos e informações em um só lugar.</p>
+            <h2 data-reveal="0" className="sy-reveal">sua operação em outro nível</h2>
+            <p data-reveal="1" className="sy-reveal sy-lead">uma plataforma criada para conectar pessoas, processos e informações em um só lugar.</p>
           </div>
-          <div data-reveal="2" data-reveal-slide="true" className="sy-reveal sy-reveal-slide">
+          <div data-reveal="2" className="sy-reveal">
             <CaseCarousel />
           </div>
         </section>
