@@ -161,7 +161,28 @@
 /* ---------- card grids ---------- */
 .sy-card-grid { display: grid; gap: 16px; margin-top: 44px; }
 .sy-card-grid-method { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-.sy-card-grid-platform { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.sy-card-grid-platform {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "hero hero b    c"
+    "hero hero wide wide"
+    "e    f    g    h";
+}
+@media (max-width: 900px) {
+  .sy-card-grid-platform {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "hero hero"
+      "b    c"
+      "wide wide"
+      "e    f"
+      "g    h";
+  }
+}
+@media (max-width: 560px) {
+  .sy-card-grid-platform { grid-template-columns: 1fr; grid-template-areas: none; }
+  .sy-card-grid-platform > * { grid-area: auto !important; }
+}
 .sy-card {
   padding: 30px 26px;
   border: 1px solid var(--sy-line);
@@ -176,6 +197,27 @@
 .sy-card-icon { width: 52px; height: 52px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; transition: transform 400ms var(--sy-ease); }
 .sy-card-icon-brand { background: linear-gradient(140deg, var(--sy-violet), var(--sy-blue)); margin: 0 0 20px; }
 .sy-card h3 { font-size: 19px; font-weight: 700; margin: 20px 0 8px; }
+
+/* featured (bento) tiles inside the platform grid */
+.sy-card-ghost-icon { position: absolute; right: -26px; bottom: -26px; width: 168px; height: 168px; fill: none; stroke: var(--sy-blue); stroke-width: 1; opacity: .09; pointer-events: none; }
+.sy-card-hero, .sy-card-wide { position: relative; overflow: hidden; background: radial-gradient(130% 110% at 100% 100%, rgba(115, 87, 255, .2), transparent 60%), linear-gradient(180deg, var(--sy-panel), var(--sy-panel-2)); }
+.sy-card-hero { padding: 36px 32px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px; }
+.sy-card-hero .sy-card-icon { width: 64px; height: 64px; border-radius: 18px; }
+.sy-card-hero .sy-card-icon .sy-icon { width: 30px; height: 30px; }
+.sy-card-hero h3 { font-size: clamp(24px, 2vw, 28px); margin-top: 24px; }
+.sy-card-hero p { font-size: 15.5px; max-width: 36ch; }
+.sy-card-wide {
+  padding: 30px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 24px;
+  align-items: center;
+}
+.sy-card-wide .sy-card-icon { grid-row: 1 / 4; margin: 0; width: 58px; height: 58px; }
+.sy-card-wide h3 { grid-column: 2; margin: 0 0 6px; font-size: 21px; }
+.sy-card-wide p { grid-column: 2; margin: 0 0 6px; }
+.sy-card-wide > a { grid-column: 2; }
+.sy-card-wide .sy-card-ghost-icon { width: 130px; height: 130px; right: 6%; bottom: -20px; }
 .sy-card-feature h3 { font-size: 20px; margin: 0 0 10px; }
 .sy-card p { font-size: 14.5px; line-height: 1.6; color: var(--sy-muted); margin: 0; }
 .sy-card-feature p { font-size: 15px; margin: 0 0 18px; }

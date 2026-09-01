@@ -73,41 +73,49 @@ const platformFeatures = [
     title: 'crm',
     description: 'todo o relacionamento com o cliente em um cadastro único, com histórico completo.',
     icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></>,
+    area: 'hero',
   },
   {
     title: 'gestão de clientes',
     description: 'segmentação, dados e movimentações organizados para cada empresa e contato.',
     icon: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>,
+    area: 'b',
   },
   {
     title: 'gestão de vendas',
     description: 'funil visual com etapas, responsáveis e acompanhamento de cada oportunidade.',
     icon: <><path d="M3 3v18h18" /><path d="M7 15l4-4 3 3 5-6" /><path d="M19 8h-3M19 8v3" /></>,
+    area: 'c',
   },
   {
     title: 'atendimento omnichannel',
     description: 'caixa de entrada compartilhada com filas por departamento e transferência entre atendentes.',
     icon: <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z" />,
+    area: 'wide',
   },
   {
     title: 'whatsapp integrado',
     description: 'mensagens do whatsapp dentro da plataforma, ligadas ao cadastro do cliente.',
     icon: <><path d="M4 20l1.4-4.2A7.7 7.7 0 1 1 8.4 18.6L4 20Z" /><path d="M9.2 9.4c0 3 2.4 5.4 5.4 5.4" /></>,
+    area: 'e',
   },
   {
     title: 'automação de processos',
     description: 'gatilhos por evento, ações automáticas e fluxos adaptados ao seu negócio.',
     icon: <><circle cx="12" cy="12" r="3.1" /><path d="M12 2.6h0a1.7 1.7 0 0 1 1.7 1.7v.5c0 .5.3 1 .8 1.2.5.2 1 .1 1.4-.2l.4-.4a1.7 1.7 0 0 1 2.4 2.4l-.4.4c-.3.4-.4.9-.2 1.4.2.5.7.8 1.2.8h.5a1.7 1.7 0 0 1 0 3.4h-.5c-.5 0-1 .3-1.2.8-.2.5-.1 1 .2 1.4l.4.4a1.7 1.7 0 0 1-2.4 2.4l-.4-.4c-.4-.3-.9-.4-1.4-.2-.5.2-.8.7-.8 1.2v.5a1.7 1.7 0 0 1-3.4 0v-.5c0-.5-.3-1-.8-1.2-.5-.2-1-.1-1.4.2l-.4.4a1.7 1.7 0 0 1-2.4-2.4l.4-.4c.3-.4.4-.9.2-1.4-.2-.5-.7-.8-1.2-.8h-.5a1.7 1.7 0 0 1 0-3.4h.5c.5 0 1-.3 1.2-.8.2-.5.1-1-.2-1.4l-.4-.4a1.7 1.7 0 0 1 2.4-2.4l.4.4c.4.3.9.4 1.4.2.5-.2.8-.7.8-1.2v-.5A1.7 1.7 0 0 1 12 2.6Z" /></>,
+    area: 'f',
   },
   {
     title: 'gestão de equipes',
     description: 'permissões, departamentos e distribuição de demanda por responsável.',
     icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></>,
+    area: 'g',
   },
   {
     title: 'relatórios e indicadores',
     description: 'volume, tempo de resposta, desempenho por canal e por equipe em tempo real.',
     icon: <><path d="M3 21h18" /><rect x="5" y="12" width="3.6" height="6" rx="1" /><rect x="10.2" y="8" width="3.6" height="10" rx="1" /><rect x="15.4" y="4" width="3.6" height="14" rx="1" /></>,
+    area: 'h',
   },
 ];
 
@@ -244,7 +252,15 @@ export default function SyrumLanding({ className }: { className: string }) {
             </div>
             <div id="recursos" className="sy-card-grid sy-card-grid-platform">
               {platformFeatures.map((feature, index) => (
-                <article key={feature.title} data-reveal={index + 2} className="sy-reveal sy-card sy-card-feature">
+                <article
+                  key={feature.title}
+                  data-reveal={index + 2}
+                  className={`sy-reveal sy-card sy-card-feature${feature.area === 'hero' ? ' sy-card-hero' : ''}${feature.area === 'wide' ? ' sy-card-wide' : ''}`}
+                  style={{ gridArea: feature.area }}
+                >
+                  {(feature.area === 'hero' || feature.area === 'wide') && (
+                    <svg viewBox="0 0 24 24" className="sy-card-ghost-icon" aria-hidden="true">{feature.icon}</svg>
+                  )}
                   <div className="sy-card-icon sy-card-icon-brand">
                     <Icon>{feature.icon}</Icon>
                   </div>
