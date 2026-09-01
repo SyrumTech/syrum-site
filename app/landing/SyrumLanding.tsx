@@ -140,6 +140,18 @@ const contactPoints = [
 
 const footerPlatformLinks = ['crm', 'atendimento omnichannel', 'whatsapp integrado', 'automação de processos', 'relatórios e indicadores'];
 
+const clientLogos = [
+  <img key="conrat" src="/landing/clients/conrat-tecnologia.png" loading="lazy" decoding="async" alt="Conrat Tecnologia" />,
+  <div key="nortex" className="sy-marquee-wordmark">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 26V6l22 20V6" /></svg>
+    <span>Nortex</span>
+  </div>,
+  <div key="vellum" className="sy-marquee-wordmark sy-marquee-wordmark-upper">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h24M8 16h16M12 24h8" /></svg>
+    <span>Vellum</span>
+  </div>,
+];
+
 export default function SyrumLanding({ className }: { className: string }) {
   const scrolled = useHeaderScrolled();
   const symbolTilt = useSymbolTilt();
@@ -251,10 +263,8 @@ export default function SyrumLanding({ className }: { className: string }) {
           </div>
           <div className="sy-marquee-mask">
             <div className="sy-marquee-track">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <div className="sy-marquee-item" key={index}>
-                  <img src="/landing/clients/conrat-tecnologia.png" loading="lazy" decoding="async" alt="Conrat Tecnologia" />
-                </div>
+              {[...clientLogos, ...clientLogos].map((client, index) => (
+                <div className="sy-marquee-item" key={index}>{client}</div>
               ))}
             </div>
           </div>
