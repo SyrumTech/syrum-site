@@ -120,7 +120,10 @@
   grid-template-columns: minmax(0, 760px) minmax(0, 440px);
   gap: clamp(16px, 2.4vw, 40px); align-items: center;
 }
-@media (max-width: 900px) { .sy-hero-content { grid-template-columns: 1fr; justify-content: stretch; } }
+@media (max-width: 900px) {
+  .sy-hero { height: auto; min-height: 100svh; padding-top: 84px; }
+  .sy-hero-content { grid-template-columns: 1fr; justify-content: stretch; }
+}
 .sy-hero-copy { container-type: inline-size; width: 100%; min-width: 0; }
 .sy-hero-kicker { font-family: var(--font-poppins), sans-serif; font-size: clamp(12px, 1.85cqw, 16px); font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #dfe4ee; margin: 0; text-shadow: 0 2px 14px rgba(0, 0, 0, .9); animation: syrumRise 800ms cubic-bezier(.22, 1, .36, 1) .15s both; }
 .sy-hero-copy h1 { font-weight: 800; font-size: clamp(28px, 6.15cqw, 60px); line-height: 1.08; letter-spacing: -.03em; margin: 18px 0 0; white-space: nowrap; text-shadow: 0 4px 30px rgba(0, 0, 0, .95), 0 1px 4px rgba(0, 0, 0, .8); animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) .55s both; }
@@ -172,8 +175,6 @@
   box-shadow: 0 18px 40px -30px rgba(0, 0, 0, .9);
   transition: border-color 400ms ease, box-shadow 400ms ease, background 400ms ease, transform 400ms ease;
 }
-.sy-card:hover { border-color: rgba(115, 87, 255, .6); box-shadow: 0 26px 60px -28px rgba(115, 87, 255, .55); background: linear-gradient(180deg, rgba(30, 33, 50, .95), rgba(14, 16, 25, .95)); transform: translateY(-4px); }
-.sy-card:hover .sy-card-icon { transform: scale(1.08) rotate(-4deg); }
 .sy-card-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; transition: transform 400ms var(--sy-ease), filter 400ms ease; }
 .sy-card-method {
   position: relative; overflow: hidden;
@@ -186,18 +187,25 @@
   background: radial-gradient(circle, var(--sy-method-glow), transparent 68%);
   opacity: .32; transition: opacity 380ms ease; pointer-events: none;
 }
-.sy-card-method:hover::before { opacity: .85; }
-.sy-card-method:hover {
-  border-color: var(--sy-method-color);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--sy-method-color) 45%, transparent), 0 30px 60px -24px var(--sy-method-glow);
-  transform: translateY(-6px) scale(1.015);
-}
 .sy-card-method .sy-card-icon { margin: 0 auto 4px; color: var(--sy-method-color); filter: drop-shadow(0 0 9px var(--sy-method-glow)); }
 .sy-card-method .sy-card-icon .sy-icon { width: 46px; height: 46px; stroke-width: 1.05; }
-.sy-card-method:hover .sy-card-icon { transform: scale(1.14); filter: drop-shadow(0 0 16px var(--sy-method-glow)) !important; }
 .sy-card.sy-card-method h3 { color: var(--sy-method-color); margin-top: 0; transition: text-shadow 380ms ease; }
-.sy-card-method:hover h3 { text-shadow: 0 0 18px var(--sy-method-glow); }
 .sy-card-method p { max-width: 32ch; }
+
+/* Hover só em dispositivos com ponteiro fino (mouse) - em touch, o :hover
+   fica "preso" ligado durante o arraste do scroll, piscando nos cards. */
+@media (hover: hover) and (pointer: fine) {
+  .sy-card:hover { border-color: rgba(115, 87, 255, .6); box-shadow: 0 26px 60px -28px rgba(115, 87, 255, .55); background: linear-gradient(180deg, rgba(30, 33, 50, .95), rgba(14, 16, 25, .95)); transform: translateY(-4px); }
+  .sy-card:hover .sy-card-icon { transform: scale(1.08) rotate(-4deg); }
+  .sy-card-method:hover::before { opacity: .85; }
+  .sy-card-method:hover {
+    border-color: var(--sy-method-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--sy-method-color) 45%, transparent), 0 30px 60px -24px var(--sy-method-glow);
+    transform: translateY(-6px) scale(1.015);
+  }
+  .sy-card-method:hover .sy-card-icon { transform: scale(1.14); filter: drop-shadow(0 0 16px var(--sy-method-glow)) !important; }
+  .sy-card-method:hover h3 { text-shadow: 0 0 18px var(--sy-method-glow); }
+}
 .sy-card h3 { font-size: 19px; font-weight: 700; margin: 20px 0 8px; }
 .sy-card p { font-size: 14.5px; line-height: 1.6; color: var(--sy-muted); margin: 0; }
 
