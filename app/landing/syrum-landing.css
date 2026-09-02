@@ -219,11 +219,19 @@
 .sy-switcher-list button.is-active .sy-switcher-chevron { opacity: 1; transform: translateX(0); }
 
 .sy-switcher-panel {
-  padding: clamp(28px, 3vw, 40px);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 4vw, 52px);
   min-height: 380px;
   border: 1px solid var(--sy-line); border-radius: 18px;
-  background: linear-gradient(180deg, var(--sy-panel), var(--sy-panel-2));
-  display: flex; flex-direction: column; justify-content: center;
+  background:
+    radial-gradient(120% 100% at 100% 100%, rgba(115, 87, 255, .22), transparent 62%),
+    linear-gradient(180deg, var(--sy-panel), var(--sy-panel-2));
+  display: flex; flex-direction: column; justify-content: flex-start;
+}
+.sy-switcher-ghost-icon {
+  position: absolute; right: -34px; bottom: -34px; width: 240px; height: 240px;
+  fill: none; stroke: var(--sy-blue); stroke-width: .7; opacity: .1; pointer-events: none;
 }
 .sy-switcher-panel--down { animation: sy-switcher-panel-down 340ms var(--sy-ease) both; }
 .sy-switcher-panel--up { animation: sy-switcher-panel-up 340ms var(--sy-ease) both; }

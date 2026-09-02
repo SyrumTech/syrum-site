@@ -105,6 +105,7 @@ export default function FeatureSwitcher() {
       </ul>
 
       <div key={active} className={`sy-switcher-panel sy-switcher-panel--${direction}`}>
+        <svg viewBox="0 0 24 24" className="sy-switcher-ghost-icon" aria-hidden="true">{activeFeature.icon}</svg>
         <div className="sy-switcher-panel-icon">
           <svg viewBox="0 0 24 24" className="sy-icon" aria-hidden="true">{activeFeature.icon}</svg>
         </div>
