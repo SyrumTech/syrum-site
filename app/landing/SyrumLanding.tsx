@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import BrandMark from './components/BrandMark';
 import CaseCarousel from './components/CaseCarousel';
-import FeatureOrbit from './components/FeatureOrbit';
+import FeatureSwitcher from './components/FeatureSwitcher';
 import LeadForm from './components/LeadForm';
 import ScrollToTopOnLoad from './components/ScrollToTopOnLoad';
 import { useHeaderScrolled, useRevealOnScroll, useSymbolTilt } from './hooks';
@@ -203,7 +203,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               <p data-reveal="1" className="sy-reveal sy-lead-center">uma base única para contatos, conversas, responsáveis, processos e resultados.</p>
             </div>
             <div id="recursos" data-reveal="2" className="sy-reveal">
-              <FeatureOrbit />
+              <FeatureSwitcher />
             </div>
           </div>
         </section>
