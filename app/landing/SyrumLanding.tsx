@@ -134,7 +134,7 @@ export default function SyrumLanding({ className }: { className: string }) {
           </nav>
           <div className="sy-header-actions">
             <Link href="https://app.syrum.com.br/login">entrar</Link>
-            <a className="sy-button" href={whatsappHref}>
+            <a className="sy-button" href={whatsappHref} target="_blank" rel="noopener noreferrer">
               <WhatsAppGlyph />
               Fale Conosco
             </a>
@@ -162,7 +162,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               </h1>
               <p className="sy-hero-lead">Tudo o que sua empresa precisa para organizar, automatizar e acompanhar sua operação em um só lugar.</p>
               <div className="sy-hero-actions">
-                <a className="sy-button sy-button-large" href={whatsappHref}>
+                <a className="sy-button sy-button-large" href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   <WhatsAppGlyph />
                   Quero organizar minha operação
                 </a>
@@ -239,7 +239,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               <p className="sy-lead">conte o cenário atual da sua empresa e montamos uma demonstração direcionada à sua realidade.</p>
               <div className="sy-contact-points">
                 {contactPoints.map((point) => (
-                  <a key={point.label} href={point.href}>
+                  <a key={point.label} href={point.href} target="_blank" rel="noopener noreferrer">
                     <Icon>{point.icon}</Icon>
                     <span>
                       <strong>{point.label}</strong>
@@ -260,13 +260,13 @@ export default function SyrumLanding({ className }: { className: string }) {
             <BrandMark />
             <p>toda a sua operação em um único fluxo.</p>
             <div className="sy-social-row">
-              <a href="https://www.linkedin.com/in/gabriel-schmitt-/" aria-label="LinkedIn" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/gabriel-schmitt-/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6.5 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21h-4V9Z" /></svg>
               </a>
-              <a href={whatsappHref} aria-label="WhatsApp" title="WhatsApp">
+              <a href={whatsappHref} aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.7L2.4 21.6l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.6a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.96.78.79-2.88-.19-.3A7.9 7.9 0 1 1 12 19.8Zm4.4-6a10 10 0 0 1-1.65-.78c-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.5 6.5 0 0 1-1.9-1.18 7.2 7.2 0 0 1-1.34-1.66c-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46a.88.88 0 0 0-.64.3c-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" /></svg>
               </a>
-              <a href="https://www.instagram.com/sistemas_syrum" aria-label="Instagram" title="Instagram">
+              <a href="https://www.instagram.com/sistemas_syrum" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.31-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.32-.27.8-.31 1.7-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.4.9.19 1.38.31 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.12.8.27 1.7.31 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.31.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.32.27-.8.31-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.31-1.7a2.9 2.9 0 0 0-.69-1.06 2.9 2.9 0 0 0-1.06-.69c-.32-.12-.8-.27-1.7-.31-1.24-.06-1.61-.07-4.75-.07Zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.14-3.2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z" /></svg>
               </a>
               <a href="#topo" aria-label="Facebook (em breve)" title="Facebook (em breve)">
@@ -291,8 +291,8 @@ export default function SyrumLanding({ className }: { className: string }) {
           <div>
             <h4>contato</h4>
             <div className="sy-footer-links">
-              <a href={whatsappHref}>(47) 99119-8047</a>
-              <a href="mailto:contato.syrum@gmail.com">contato.syrum@gmail.com</a>
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">(47) 99119-8047</a>
+              <a href="mailto:contato.syrum@gmail.com" target="_blank" rel="noopener noreferrer">contato.syrum@gmail.com</a>
               <span>grande florianópolis — sc</span>
               <Link href="https://app.syrum.com.br/login">acessar a plataforma</Link>
             </div>
