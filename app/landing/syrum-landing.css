@@ -121,8 +121,8 @@
 @media (max-width: 900px) { .sy-hero-content { grid-template-columns: 1fr; justify-content: stretch; } }
 .sy-hero-copy { container-type: inline-size; width: 100%; min-width: 0; }
 .sy-hero-kicker { font-family: var(--font-poppins), sans-serif; font-size: clamp(12px, 1.85cqw, 16px); font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #dfe4ee; margin: 0; text-shadow: 0 2px 14px rgba(0, 0, 0, .9); animation: syrumRise 800ms cubic-bezier(.22, 1, .36, 1) .15s both; }
-.sy-hero-copy h1 { font-weight: 800; font-size: clamp(26px, 7.1cqw, 54px); line-height: 1.08; letter-spacing: -.03em; margin: 18px 0 0; text-shadow: 0 4px 30px rgba(0, 0, 0, .95), 0 1px 4px rgba(0, 0, 0, .8); animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) .55s both; }
-@supports not (width: 1cqw) { .sy-hero-copy h1 { font-size: clamp(26px, 4.4vw, 54px); } }
+.sy-hero-copy h1 { font-weight: 800; font-size: clamp(26px, 6.6cqw, 50px); line-height: 1.08; letter-spacing: -.03em; margin: 18px 0 0; white-space: nowrap; text-shadow: 0 4px 30px rgba(0, 0, 0, .95), 0 1px 4px rgba(0, 0, 0, .8); animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) .55s both; }
+@supports not (width: 1cqw) { .sy-hero-copy h1 { font-size: clamp(26px, 4.1vw, 50px); } }
 @media (max-width: 560px) { .sy-hero-copy h1 { white-space: normal; } }
 .sy-hero-lead { font-family: var(--font-poppins), sans-serif; font-size: clamp(15px, 2.2cqw, 19px); font-weight: 400; line-height: 1.55; color: #e2e6ef; margin: 20px 0 0; max-width: 46ch; text-shadow: 0 2px 18px rgba(0, 0, 0, .95); animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) 1.05s both; }
 .sy-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; animation: syrumRise 900ms cubic-bezier(.22, 1, .36, 1) 1.55s both; }
