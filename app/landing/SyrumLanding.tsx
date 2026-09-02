@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useRef } from 'react';
 import Link from 'next/link';
 
@@ -42,31 +42,36 @@ const methodSteps = [
     title: 'centralizar',
     description: 'todos os canais e contatos em um só lugar, sem planilhas paralelas.',
     gradient: 'linear-gradient(140deg,#7B2BFF,#368cff)',
-    icon: <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M12 1v3M12 20v3M1 12h3M20 12h3" /></>,
+    glow: 'rgba(123,43,255,.45)',
+    icon: <><circle cx="12" cy="12" r="7.5" /><circle cx="12" cy="12" r="3" /><path d="M12 1.4v2.6M12 20v2.6M1.4 12h2.6M20 12h2.6" /><path d="m5.6 5.6 1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" /></>,
   },
   {
     title: 'organizar',
     description: 'departamentos, filas e responsáveis definidos para cada tipo de demanda.',
     gradient: 'linear-gradient(140deg,#6a3aff,#3a91ff)',
-    icon: <><rect x="3" y="4" width="5" height="16" rx="1.4" /><rect x="9.5" y="4" width="5" height="10" rx="1.4" /><rect x="16" y="4" width="5" height="13" rx="1.4" /></>,
+    glow: 'rgba(106,58,255,.45)',
+    icon: <><rect x="3" y="4" width="5.4" height="16" rx="1.3" /><rect x="9.3" y="4" width="5.4" height="10" rx="1.3" /><rect x="15.6" y="4" width="5.4" height="13" rx="1.3" /><path d="M4.6 8.2h2.2M4.6 11h2.2M10.9 8.2h2.2M17.2 8.2h2.2M17.2 11h2.2" /></>,
   },
   {
     title: 'automatizar',
     description: 'gatilhos e ações que eliminam a tarefa manual e mantêm o processo rodando.',
     gradient: 'linear-gradient(140deg,#5b4bff,#3ba0ff)',
-    icon: <><path d="M12 2c3.4 2.2 5.4 5.9 5.4 10l-2.6 3.3H9.2L6.6 12C6.6 7.9 8.6 4.2 12 2Z" /><circle cx="12" cy="9.5" r="2" /><path d="M9.2 15.3 7 18.6l3.1-.7M14.8 15.3 17 18.6l-3.1-.7M12 18.6V22" /></>,
+    glow: 'rgba(91,75,255,.45)',
+    icon: <><path d="M12 2.6a1.7 1.7 0 0 1 1.7 1.7v.5c0 .5.3 1 .8 1.2.5.2 1 .1 1.4-.2l.4-.4a1.7 1.7 0 0 1 2.4 2.4l-.4.4c-.3.4-.4.9-.2 1.4.2.5.7.8 1.2.8h.5a1.7 1.7 0 0 1 0 3.4h-.5c-.5 0-1 .3-1.2.8-.2.5-.1 1 .2 1.4l.4.4a1.7 1.7 0 0 1-2.4 2.4l-.4-.4c-.4-.3-.9-.4-1.4-.2-.5.2-.8.7-.8 1.2v.5a1.7 1.7 0 0 1-3.4 0v-.5c0-.5-.3-1-.8-1.2-.5-.2-1-.1-1.4.2l-.4.4a1.7 1.7 0 0 1-2.4-2.4l.4-.4c.3-.4.4-.9.2-1.4-.2-.5-.7-.8-1.2-.8h-.5a1.7 1.7 0 0 1 0-3.4h.5c.5 0 1-.3 1.2-.8.2-.5.1-1-.2-1.4l-.4-.4a1.7 1.7 0 0 1 2.4-2.4l.4.4c.4.3.9.4 1.4.2.5-.2.8-.7.8-1.2v-.5A1.7 1.7 0 0 1 12 2.6Z" /><path d="M11.4 9.3 9.3 12.4h1.9l-.6 2.7L13 12.1h-1.8l.2-2.8Z" /></>,
   },
   {
     title: 'converter',
     description: 'funil comercial acompanhado etapa a etapa, do primeiro contato ao fechamento.',
     gradient: 'linear-gradient(140deg,#4a5cff,#2fb5ff)',
-    icon: <path d="M3 4h18l-7 8v8l-4-2v-6L3 4Z" />,
+    glow: 'rgba(74,92,255,.45)',
+    icon: <><path d="M3 4h18l-7 8v7l-4 2v-9L3 4Z" /><circle cx="9" cy="4" r=".9" fill="currentColor" stroke="none" /><circle cx="12" cy="4" r=".9" fill="currentColor" stroke="none" /><circle cx="15" cy="4" r=".9" fill="currentColor" stroke="none" /></>,
   },
   {
     title: 'analisar',
     description: 'indicadores em tempo real para decidir com dado, não com achismo.',
     gradient: 'linear-gradient(140deg,#3a6dff,#2ED9FF)',
-    icon: <><path d="M3 21h18" /><rect x="5" y="12" width="3.6" height="6" rx="1" /><rect x="10.2" y="8" width="3.6" height="10" rx="1" /><rect x="15.4" y="4" width="3.6" height="14" rx="1" /></>,
+    glow: 'rgba(46,217,255,.45)',
+    icon: <><path d="M3 21h18" /><rect x="5" y="14" width="3.2" height="4" rx="1" /><rect x="10.4" y="10" width="3.2" height="8" rx="1" /><rect x="15.8" y="6" width="3.2" height="12" rx="1" /><path d="M5 9.2 9 6l3.4 2.6L18 4" /><path d="M14.6 4h3.4v3.4" /></>,
   },
 ];
 
@@ -183,8 +188,8 @@ export default function SyrumLanding({ className }: { className: string }) {
             <p data-reveal="1" className="sy-reveal sy-lead-center">5 etapas que transformam uma operação dispersa em um fluxo previsível de atendimento e vendas.</p>
             <div className="sy-card-grid sy-card-grid-method">
               {methodSteps.map((step, index) => (
-                <article key={step.title} data-reveal={index + 2} className="sy-reveal sy-card">
-                  <div className="sy-card-icon" style={{ background: step.gradient }}>
+                <article key={step.title} data-reveal={index + 2} className="sy-reveal sy-card sy-card-method" style={{ '--sy-method-glow': step.glow } as CSSProperties}>
+                  <div className="sy-card-icon" style={{ background: step.gradient, boxShadow: `0 0 30px ${step.glow}` }}>
                     <Icon>{step.icon}</Icon>
                   </div>
                   <h3>{step.title}</h3>
