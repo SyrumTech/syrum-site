@@ -220,6 +220,7 @@
 
 .sy-switcher-panel {
   padding: clamp(28px, 3vw, 40px);
+  min-height: 380px;
   border: 1px solid var(--sy-line); border-radius: 18px;
   background: linear-gradient(180deg, var(--sy-panel), var(--sy-panel-2));
   display: flex; flex-direction: column; justify-content: center;
@@ -235,7 +236,10 @@
 .sy-switcher-panel-icon .sy-icon { width: 26px; height: 26px; }
 .sy-switcher-panel h3 { font-size: clamp(22px, 2vw, 26px); font-weight: 700; margin: 0 0 12px; animation: sy-switcher-rise-in 460ms var(--sy-ease) 60ms both; }
 .sy-switcher-panel p { font-size: 15.5px; line-height: 1.65; color: var(--sy-muted); margin: 0 0 18px; max-width: 46ch; animation: sy-switcher-rise-in 460ms var(--sy-ease) 130ms both; }
-.sy-switcher-panel > a { font-size: 14px; font-weight: 600; color: #7ba6ff; animation: sy-switcher-rise-in 460ms var(--sy-ease) 200ms both; }
+.sy-switcher-items { list-style: none; margin: 0 0 22px; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.sy-switcher-items li { display: flex; align-items: center; gap: 11px; font-size: 14.5px; color: var(--sy-text); animation: sy-switcher-rise-in 420ms var(--sy-ease) both; }
+.sy-switcher-check { flex: 0 0 auto; width: 18px; height: 18px; fill: none; stroke: #58ddb2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sy-switcher-panel > a { font-size: 14px; font-weight: 600; color: #7ba6ff; animation: sy-switcher-rise-in 460ms var(--sy-ease) 400ms both; }
 
 @keyframes sy-switcher-icon-in { from { opacity: 0; transform: scale(.55) rotate(-14deg); } to { opacity: 1; transform: none; } }
 @keyframes sy-switcher-rise-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
