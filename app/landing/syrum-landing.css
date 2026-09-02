@@ -376,6 +376,11 @@
 .sy-footer-links { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
 .sy-footer-links a, .sy-footer-links span { color: var(--sy-muted); }
 .sy-footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--sy-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6f7686; }
+@media (max-width: 640px) {
+  .sy-footer { padding-top: 40px; }
+  .sy-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+  .sy-footer-grid > div:first-child { grid-column: 1 / -1; }
+}
 
 /* ---------- keyframes ---------- */
 @keyframes syrumMarquee { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--sy-marquee-unit))); } }
