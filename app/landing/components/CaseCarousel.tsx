@@ -11,19 +11,19 @@ type Case = {
 
 const cases: Case[] = [
   {
-    image: '/landing/case-atendimento.jpg',
+    image: '/landing/case-atendimento.webp',
     alt: 'CRM Syrum — inbox de atendimento',
     tag: 'atendimento',
     title: 'Centralize conversas, acompanhe cada cliente e dê à sua equipe uma visão completa de cada interação.',
   },
   {
-    image: '/landing/case-ordem-servico.jpg',
+    image: '/landing/case-ordem-servico.webp',
     alt: 'CRM Syrum — central de ordens de serviço',
     tag: 'ordem de serviço',
     title: 'Crie, acompanhe e gerencie ordens de serviço sem perder prazos, informações ou histórico.',
   },
   {
-    image: '/landing/case-automacao.jpg',
+    image: '/landing/case-automacao.webp',
     alt: 'CRM Syrum — editor de automações',
     tag: 'automação',
     title: 'Automatize processos e atendimentos enquanto sua equipe cuida do que realmente importa.',

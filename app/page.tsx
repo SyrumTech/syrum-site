@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import SyrumLanding from './landing/SyrumLanding';
-import { manrope, poppins, sora } from './landing/styles/fonts';
+import { manrope, poppins } from './landing/styles/fonts';
 import './landing/syrum-landing.css';
 
 export const metadata: Metadata = {
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <SyrumLanding className={`${poppins.variable} ${sora.variable} ${manrope.variable}`} />;
+  return <SyrumLanding className={`${poppins.variable} ${manrope.variable}`} />;
 }

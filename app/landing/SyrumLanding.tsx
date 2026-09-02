@@ -105,7 +105,7 @@ const contactPoints = [
 const footerPlatformLinks = ['crm', 'atendimento omnichannel', 'whatsapp integrado', 'automação de processos', 'relatórios e indicadores'];
 
 const clientLogos = [
-  <img key="conrat" src="/landing/clients/conrat-tecnologia.png" loading="lazy" decoding="async" alt="Conrat Tecnologia" />,
+  <img key="conrat" src="/landing/clients/conrat-tecnologia.webp" loading="lazy" decoding="async" alt="Conrat Tecnologia" />,
   <div key="nortex" className="sy-marquee-wordmark">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 26V6l22 20V6" /></svg>
     <span>Nortex</span>
@@ -150,10 +150,10 @@ export default function SyrumLanding({ className }: { className: string }) {
       <main ref={mainRef}>
         <section id="topo" className="sy-hero">
           <div className="sy-hero-bg">
-            <img src="/landing/hero-bg-1.jpg" alt="" className="sy-hero-bg-img sy-ken-0" />
-            <img src="/landing/hero-bg-2.jpg" alt="" className="sy-hero-bg-img sy-ken-1" loading="lazy" decoding="async" fetchPriority="low" />
-            <img src="/landing/hero-bg-3.jpg" alt="" className="sy-hero-bg-img sy-ken-2" loading="lazy" decoding="async" fetchPriority="low" />
-            <img src="/landing/hero-bg-4.jpg" alt="" className="sy-hero-bg-img sy-ken-3" loading="lazy" decoding="async" fetchPriority="low" />
+            <img src="/landing/hero-bg-1.webp" alt="" className="sy-hero-bg-img sy-ken-0" />
+            <img src="/landing/hero-bg-2.webp" alt="" className="sy-hero-bg-img sy-ken-1" loading="lazy" decoding="async" fetchPriority="low" />
+            <img src="/landing/hero-bg-3.webp" alt="" className="sy-hero-bg-img sy-ken-2" loading="lazy" decoding="async" fetchPriority="low" />
+            <img src="/landing/hero-bg-4.webp" alt="" className="sy-hero-bg-img sy-ken-3" loading="lazy" decoding="async" fetchPriority="low" />
           </div>
           <div className="sy-hero-scrim-a" />
           <div className="sy-hero-scrim-b" />
