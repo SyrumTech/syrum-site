@@ -46,6 +46,10 @@ export function useRevealOnScroll(containerRef: RefObject<HTMLElement | null>) {
           el.classList.remove('sy-reveal-pending');
           el.classList.add('is-visible');
           io.unobserve(el);
+          // O delay é só para a entrada por scroll — sem isso, um hover logo
+          // depois de revelar herdaria o mesmo atraso (ex.: hover parece
+          // "travado" por até ~600ms nos últimos cards da grade).
+          el.addEventListener('transitionend', () => { el.style.transitionDelay = ''; }, { once: true });
         });
       },
       { threshold: 0, rootMargin: '0px 0px -2% 0px' },

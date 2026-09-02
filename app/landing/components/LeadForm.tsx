@@ -45,6 +45,7 @@ export default function LeadForm() {
       teamSize: getFormValue(formData, 'equipe'),
       interest: getFormValue(formData, 'necessidade'),
       message: '',
+      origin: 'site',
       ...getTrackingParameters(),
     };
 
@@ -59,14 +60,14 @@ export default function LeadForm() {
       });
       const result = (await response.json()) as LeadResponse;
       if (!response.ok || !result.success) {
-        throw new Error(result.message ?? 'Não foi possível enviar a solicitação.');
+        throw new Error('lead_submit_failed');
       }
       setStatus('success');
-      setMessage(result.message ?? 'Recebemos sua solicitação.');
+      setMessage('Mensagem enviada com sucesso. Em breve entraremos em contato.');
       form.reset();
-    } catch (error) {
+    } catch {
       setStatus('error');
-      setMessage(error instanceof Error ? error.message : 'Não foi possível enviar a solicitação.');
+      setMessage('Não foi possível enviar sua mensagem agora. Tente novamente em alguns instantes.');
     }
   }
 
@@ -74,11 +75,7 @@ export default function LeadForm() {
     void handleSubmit(event);
   }
 
-  const submitLabel = status === 'sending'
-    ? 'enviando...'
-    : status === 'success'
-      ? 'recebido — retornamos em breve'
-      : 'enviar mensagem agora';
+  const submitLabel = status === 'sending' ? 'enviando...' : 'enviar mensagem agora';
 
   return (
     <form className="sy-lead-form" onSubmit={submitForm}>
@@ -112,7 +109,7 @@ export default function LeadForm() {
           <option value="Ainda não sei">Ainda não sei</option>
         </select>
       </label>
-      <button type="submit" disabled={status === 'sending' || status === 'success'}>
+      <button type="submit" disabled={status === 'sending'}>
         {submitLabel}
       </button>
       <p className={`sy-lead-form-status sy-lead-form-status--${status}`} role="status" aria-live="polite">

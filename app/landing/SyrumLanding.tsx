@@ -1,12 +1,14 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useRef } from 'react';
 import Link from 'next/link';
 
 import BrandMark from './components/BrandMark';
 import CaseCarousel from './components/CaseCarousel';
+import FeatureSwitcher from './components/FeatureSwitcher';
 import LeadForm from './components/LeadForm';
+import ScrollToTopOnLoad from './components/ScrollToTopOnLoad';
 import { useHeaderScrolled, useRevealOnScroll, useSymbolTilt } from './hooks';
 
 const whatsappHref = 'https://wa.me/5547991198047';
@@ -39,83 +41,37 @@ const methodSteps = [
   {
     title: 'centralizar',
     description: 'todos os canais e contatos em um só lugar, sem planilhas paralelas.',
-    gradient: 'linear-gradient(140deg,#7B2BFF,#368cff)',
-    icon: <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M12 1v3M12 20v3M1 12h3M20 12h3" /></>,
+    color: '#A05CFF',
+    glow: 'rgba(160,92,255,.65)',
+    icon: <><circle cx="12" cy="12" r="7.5" /><circle cx="12" cy="12" r="3" /><path d="M12 1.4v2.6M12 20v2.6M1.4 12h2.6M20 12h2.6" /><path d="m5.6 5.6 1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" /></>,
   },
   {
     title: 'organizar',
     description: 'departamentos, filas e responsáveis definidos para cada tipo de demanda.',
-    gradient: 'linear-gradient(140deg,#6a3aff,#3a91ff)',
-    icon: <><rect x="3" y="4" width="5" height="16" rx="1.4" /><rect x="9.5" y="4" width="5" height="10" rx="1.4" /><rect x="16" y="4" width="5" height="13" rx="1.4" /></>,
+    color: '#6C5CFF',
+    glow: 'rgba(108,92,255,.65)',
+    icon: <><rect x="3" y="4" width="5.4" height="16" rx="1.3" /><rect x="9.3" y="4" width="5.4" height="10" rx="1.3" /><rect x="15.6" y="4" width="5.4" height="13" rx="1.3" /><path d="M4.6 8.2h2.2M4.6 11h2.2M10.9 8.2h2.2M17.2 8.2h2.2M17.2 11h2.2" /></>,
   },
   {
     title: 'automatizar',
     description: 'gatilhos e ações que eliminam a tarefa manual e mantêm o processo rodando.',
-    gradient: 'linear-gradient(140deg,#5b4bff,#3ba0ff)',
-    icon: <><path d="M12 2c3.4 2.2 5.4 5.9 5.4 10l-2.6 3.3H9.2L6.6 12C6.6 7.9 8.6 4.2 12 2Z" /><circle cx="12" cy="9.5" r="2" /><path d="M9.2 15.3 7 18.6l3.1-.7M14.8 15.3 17 18.6l-3.1-.7M12 18.6V22" /></>,
+    color: '#5C7FFF',
+    glow: 'rgba(92,127,255,.65)',
+    icon: <><path d="M12 2.6a1.7 1.7 0 0 1 1.7 1.7v.5c0 .5.3 1 .8 1.2.5.2 1 .1 1.4-.2l.4-.4a1.7 1.7 0 0 1 2.4 2.4l-.4.4c-.3.4-.4.9-.2 1.4.2.5.7.8 1.2.8h.5a1.7 1.7 0 0 1 0 3.4h-.5c-.5 0-1 .3-1.2.8-.2.5-.1 1 .2 1.4l.4.4a1.7 1.7 0 0 1-2.4 2.4l-.4-.4c-.4-.3-.9-.4-1.4-.2-.5.2-.8.7-.8 1.2v.5a1.7 1.7 0 0 1-3.4 0v-.5c0-.5-.3-1-.8-1.2-.5-.2-1-.1-1.4.2l-.4.4a1.7 1.7 0 0 1-2.4-2.4l.4-.4c.3-.4.4-.9.2-1.4-.2-.5-.7-.8-1.2-.8h-.5a1.7 1.7 0 0 1 0-3.4h.5c.5 0 1-.3 1.2-.8.2-.5.1-1-.2-1.4l-.4-.4a1.7 1.7 0 0 1 2.4-2.4l.4.4c.4.3.9.4 1.4.2.5-.2.8-.7.8-1.2v-.5A1.7 1.7 0 0 1 12 2.6Z" /><path d="M11.4 9.3 9.3 12.4h1.9l-.6 2.7L13 12.1h-1.8l.2-2.8Z" /></>,
   },
   {
     title: 'converter',
     description: 'funil comercial acompanhado etapa a etapa, do primeiro contato ao fechamento.',
-    gradient: 'linear-gradient(140deg,#4a5cff,#2fb5ff)',
-    icon: <path d="M3 4h18l-7 8v8l-4-2v-6L3 4Z" />,
+    color: '#5CB3FF',
+    glow: 'rgba(92,179,255,.65)',
+    icon: <><path d="M3 4h18l-7 8v7l-4 2v-9L3 4Z" /><circle cx="9" cy="4" r=".9" fill="currentColor" stroke="none" /><circle cx="12" cy="4" r=".9" fill="currentColor" stroke="none" /><circle cx="15" cy="4" r=".9" fill="currentColor" stroke="none" /></>,
   },
   {
     title: 'analisar',
     description: 'indicadores em tempo real para decidir com dado, não com achismo.',
-    gradient: 'linear-gradient(140deg,#3a6dff,#2ED9FF)',
-    icon: <><path d="M3 21h18" /><rect x="5" y="12" width="3.6" height="6" rx="1" /><rect x="10.2" y="8" width="3.6" height="10" rx="1" /><rect x="15.4" y="4" width="3.6" height="14" rx="1" /></>,
-  },
-];
-
-const platformFeatures = [
-  {
-    title: 'crm',
-    description: 'todo o relacionamento com o cliente em um cadastro único, com histórico completo.',
-    icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></>,
-    area: 'hero',
-  },
-  {
-    title: 'gestão de clientes',
-    description: 'segmentação, dados e movimentações organizados para cada empresa e contato.',
-    icon: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>,
-    area: 'b',
-  },
-  {
-    title: 'gestão de vendas',
-    description: 'funil visual com etapas, responsáveis e acompanhamento de cada oportunidade.',
-    icon: <><path d="M3 3v18h18" /><path d="M7 15l4-4 3 3 5-6" /><path d="M19 8h-3M19 8v3" /></>,
-    area: 'c',
-  },
-  {
-    title: 'atendimento omnichannel',
-    description: 'caixa de entrada compartilhada com filas por departamento e transferência entre atendentes.',
-    icon: <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z" />,
-    area: 'wide',
-  },
-  {
-    title: 'whatsapp integrado',
-    description: 'mensagens do whatsapp dentro da plataforma, ligadas ao cadastro do cliente.',
-    icon: <><path d="M4 20l1.4-4.2A7.7 7.7 0 1 1 8.4 18.6L4 20Z" /><path d="M9.2 9.4c0 3 2.4 5.4 5.4 5.4" /></>,
-    area: 'e',
-  },
-  {
-    title: 'automação de processos',
-    description: 'gatilhos por evento, ações automáticas e fluxos adaptados ao seu negócio.',
-    icon: <><circle cx="12" cy="12" r="3.1" /><path d="M12 2.6h0a1.7 1.7 0 0 1 1.7 1.7v.5c0 .5.3 1 .8 1.2.5.2 1 .1 1.4-.2l.4-.4a1.7 1.7 0 0 1 2.4 2.4l-.4.4c-.3.4-.4.9-.2 1.4.2.5.7.8 1.2.8h.5a1.7 1.7 0 0 1 0 3.4h-.5c-.5 0-1 .3-1.2.8-.2.5-.1 1 .2 1.4l.4.4a1.7 1.7 0 0 1-2.4 2.4l-.4-.4c-.4-.3-.9-.4-1.4-.2-.5.2-.8.7-.8 1.2v.5a1.7 1.7 0 0 1-3.4 0v-.5c0-.5-.3-1-.8-1.2-.5-.2-1-.1-1.4.2l-.4.4a1.7 1.7 0 0 1-2.4-2.4l.4-.4c.3-.4.4-.9.2-1.4-.2-.5-.7-.8-1.2-.8h-.5a1.7 1.7 0 0 1 0-3.4h.5c.5 0 1-.3 1.2-.8.2-.5.1-1-.2-1.4l-.4-.4a1.7 1.7 0 0 1 2.4-2.4l.4.4c.4.3.9.4 1.4.2.5-.2.8-.7.8-1.2v-.5A1.7 1.7 0 0 1 12 2.6Z" /></>,
-    area: 'f',
-  },
-  {
-    title: 'gestão de equipes',
-    description: 'permissões, departamentos e distribuição de demanda por responsável.',
-    icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></>,
-    area: 'g',
-  },
-  {
-    title: 'relatórios e indicadores',
-    description: 'volume, tempo de resposta, desempenho por canal e por equipe em tempo real.',
-    icon: <><path d="M3 21h18" /><rect x="5" y="12" width="3.6" height="6" rx="1" /><rect x="10.2" y="8" width="3.6" height="10" rx="1" /><rect x="15.4" y="4" width="3.6" height="14" rx="1" /></>,
-    area: 'h',
+    color: '#5CE6FF',
+    glow: 'rgba(92,230,255,.65)',
+    icon: <><path d="M3 21h18" /><rect x="5" y="14" width="3.2" height="4" rx="1" /><rect x="10.4" y="10" width="3.2" height="8" rx="1" /><rect x="15.8" y="6" width="3.2" height="12" rx="1" /><path d="M5 9.2 9 6l3.4 2.6L18 4" /><path d="M14.6 4h3.4v3.4" /></>,
   },
 ];
 
@@ -168,6 +124,7 @@ export default function SyrumLanding({ className }: { className: string }) {
 
   return (
     <div className={`sy-site ${className}`}>
+      <ScrollToTopOnLoad />
       <header className={`sy-header${scrolled ? ' is-scrolled' : ''}`}>
         <div className="sy-header-inner">
           <a href="#topo" aria-label="Syrum, início">
@@ -182,7 +139,7 @@ export default function SyrumLanding({ className }: { className: string }) {
           </nav>
           <div className="sy-header-actions">
             <Link href="https://app.syrum.com.br/login">entrar</Link>
-            <a className="sy-button" href={whatsappHref}>
+            <a className="sy-button" href={whatsappHref} target="_blank" rel="noopener noreferrer">
               <WhatsAppGlyph />
               Fale Conosco
             </a>
@@ -210,7 +167,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               </h1>
               <p className="sy-hero-lead">Tudo o que sua empresa precisa para organizar, automatizar e acompanhar sua operação em um só lugar.</p>
               <div className="sy-hero-actions">
-                <a className="sy-button sy-button-large" href={whatsappHref}>
+                <a className="sy-button sy-button-large" href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   <WhatsAppGlyph />
                   Quero organizar minha operação
                 </a>
@@ -231,8 +188,13 @@ export default function SyrumLanding({ className }: { className: string }) {
             <p data-reveal="1" className="sy-reveal sy-lead-center">5 etapas que transformam uma operação dispersa em um fluxo previsível de atendimento e vendas.</p>
             <div className="sy-card-grid sy-card-grid-method">
               {methodSteps.map((step, index) => (
-                <article key={step.title} data-reveal={index + 2} className="sy-reveal sy-card">
-                  <div className="sy-card-icon" style={{ background: step.gradient }}>
+                <article
+                  key={step.title}
+                  data-reveal={index + 2}
+                  className="sy-reveal sy-card sy-card-method"
+                  style={{ '--sy-method-color': step.color, '--sy-method-glow': step.glow } as CSSProperties}
+                >
+                  <div className="sy-card-icon">
                     <Icon>{step.icon}</Icon>
                   </div>
                   <h3>{step.title}</h3>
@@ -250,25 +212,8 @@ export default function SyrumLanding({ className }: { className: string }) {
               <h2 data-reveal="0" className="sy-reveal">tudo o que sua equipe precisa para <span className="sy-gradient-text">operar</span></h2>
               <p data-reveal="1" className="sy-reveal sy-lead-center">uma base única para contatos, conversas, responsáveis, processos e resultados.</p>
             </div>
-            <div id="recursos" className="sy-card-grid sy-card-grid-platform">
-              {platformFeatures.map((feature, index) => (
-                <article
-                  key={feature.title}
-                  data-reveal={index + 2}
-                  className={`sy-reveal sy-card sy-card-feature${feature.area === 'hero' ? ' sy-card-hero' : ''}${feature.area === 'wide' ? ' sy-card-wide' : ''}`}
-                  style={{ gridArea: feature.area }}
-                >
-                  {(feature.area === 'hero' || feature.area === 'wide') && (
-                    <svg viewBox="0 0 24 24" className="sy-card-ghost-icon" aria-hidden="true">{feature.icon}</svg>
-                  )}
-                  <div className="sy-card-icon sy-card-icon-brand">
-                    <Icon>{feature.icon}</Icon>
-                  </div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                  <a href="#contato">saiba mais →</a>
-                </article>
-              ))}
+            <div id="recursos" data-reveal="2" className="sy-reveal">
+              <FeatureSwitcher />
             </div>
           </div>
         </section>
@@ -304,7 +249,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               <p className="sy-lead">conte o cenário atual da sua empresa e montamos uma demonstração direcionada à sua realidade.</p>
               <div className="sy-contact-points">
                 {contactPoints.map((point) => (
-                  <a key={point.label} href={point.href}>
+                  <a key={point.label} href={point.href} target="_blank" rel="noopener noreferrer">
                     <Icon>{point.icon}</Icon>
                     <span>
                       <strong>{point.label}</strong>
@@ -325,13 +270,13 @@ export default function SyrumLanding({ className }: { className: string }) {
             <BrandMark />
             <p>toda a sua operação em um único fluxo.</p>
             <div className="sy-social-row">
-              <a href="https://www.linkedin.com/in/gabriel-schmitt-/" aria-label="LinkedIn" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/gabriel-schmitt-/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6.5 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21h-4V9Z" /></svg>
               </a>
-              <a href={whatsappHref} aria-label="WhatsApp" title="WhatsApp">
+              <a href={whatsappHref} aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.7L2.4 21.6l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.6a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.96.78.79-2.88-.19-.3A7.9 7.9 0 1 1 12 19.8Zm4.4-6a10 10 0 0 1-1.65-.78c-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.5 6.5 0 0 1-1.9-1.18 7.2 7.2 0 0 1-1.34-1.66c-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46a.88.88 0 0 0-.64.3c-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" /></svg>
               </a>
-              <a href="https://www.instagram.com/sistemas_syrum" aria-label="Instagram" title="Instagram">
+              <a href="https://www.instagram.com/sistemas_syrum" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.31-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.32-.27.8-.31 1.7-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.4.9.19 1.38.31 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.12.8.27 1.7.31 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.31.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.32.27-.8.31-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.31-1.7a2.9 2.9 0 0 0-.69-1.06 2.9 2.9 0 0 0-1.06-.69c-.32-.12-.8-.27-1.7-.31-1.24-.06-1.61-.07-4.75-.07Zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.14-3.2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z" /></svg>
               </a>
               <a href="#topo" aria-label="Facebook (em breve)" title="Facebook (em breve)">
@@ -356,8 +301,8 @@ export default function SyrumLanding({ className }: { className: string }) {
           <div>
             <h4>contato</h4>
             <div className="sy-footer-links">
-              <a href={whatsappHref}>(47) 99119-8047</a>
-              <a href="mailto:contato.syrum@gmail.com">contato.syrum@gmail.com</a>
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">(47) 99119-8047</a>
+              <a href="mailto:contato.syrum@gmail.com" target="_blank" rel="noopener noreferrer">contato.syrum@gmail.com</a>
               <span>grande florianópolis — sc</span>
               <Link href="https://app.syrum.com.br/login">acessar a plataforma</Link>
             </div>

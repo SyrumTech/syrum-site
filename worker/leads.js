@@ -24,6 +24,7 @@ function validateLead(payload) {
     teamSize: normalizeText(payload.teamSize, 30),
     interest: normalizeText(payload.interest, 60),
     message: normalizeText(payload.message, 1500),
+    origin: normalizeText(payload.origin, 30) || 'site',
     utmSource: normalizeText(payload.utmSource, 100),
     utmMedium: normalizeText(payload.utmMedium, 100),
     utmCampaign: normalizeText(payload.utmCampaign, 150),
