@@ -7,6 +7,7 @@ import Link from 'next/link';
 import BrandMark from './components/BrandMark';
 import CaseCarousel from './components/CaseCarousel';
 import LeadForm from './components/LeadForm';
+import ScrollToTopOnLoad from './components/ScrollToTopOnLoad';
 import { useHeaderScrolled, useRevealOnScroll, useSymbolTilt } from './hooks';
 
 const whatsappHref = 'https://wa.me/5547991198047';
@@ -168,6 +169,7 @@ export default function SyrumLanding({ className }: { className: string }) {
 
   return (
     <div className={`sy-site ${className}`}>
+      <ScrollToTopOnLoad />
       <header className={`sy-header${scrolled ? ' is-scrolled' : ''}`}>
         <div className="sy-header-inner">
           <a href="#topo" aria-label="Syrum, início">
