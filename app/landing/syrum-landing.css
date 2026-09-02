@@ -192,10 +192,10 @@
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--sy-method-color) 45%, transparent), 0 30px 60px -24px var(--sy-method-glow);
   transform: translateY(-6px) scale(1.015);
 }
-.sy-card-method .sy-card-icon { margin: 0 auto 11px; color: var(--sy-method-color); filter: drop-shadow(0 0 9px var(--sy-method-glow)); }
+.sy-card-method .sy-card-icon { margin: 0 auto 4px; color: var(--sy-method-color); filter: drop-shadow(0 0 9px var(--sy-method-glow)); }
 .sy-card-method .sy-card-icon .sy-icon { width: 46px; height: 46px; stroke-width: 1.05; }
 .sy-card-method:hover .sy-card-icon { transform: scale(1.14); filter: drop-shadow(0 0 16px var(--sy-method-glow)) !important; }
-.sy-card-method h3 { color: var(--sy-method-color); margin-top: 0; transition: text-shadow 380ms ease; }
+.sy-card.sy-card-method h3 { color: var(--sy-method-color); margin-top: 0; transition: text-shadow 380ms ease; }
 .sy-card-method:hover h3 { text-shadow: 0 0 18px var(--sy-method-glow); }
 .sy-card-method p { max-width: 32ch; }
 .sy-card h3 { font-size: 19px; font-weight: 700; margin: 20px 0 8px; }
