@@ -188,8 +188,13 @@ export default function SyrumLanding({ className }: { className: string }) {
             <p data-reveal="1" className="sy-reveal sy-lead-center">5 etapas que transformam uma operação dispersa em um fluxo previsível de atendimento e vendas.</p>
             <div className="sy-card-grid sy-card-grid-method">
               {methodSteps.map((step, index) => (
-                <article key={step.title} data-reveal={index + 2} className="sy-reveal sy-card sy-card-method" style={{ '--sy-method-glow': step.glow } as CSSProperties}>
-                  <div className="sy-card-icon" style={{ color: step.color, filter: `drop-shadow(0 0 7px ${step.glow})` }}>
+                <article
+                  key={step.title}
+                  data-reveal={index + 2}
+                  className="sy-reveal sy-card sy-card-method"
+                  style={{ '--sy-method-color': step.color, '--sy-method-glow': step.glow } as CSSProperties}
+                >
+                  <div className="sy-card-icon">
                     <Icon>{step.icon}</Icon>
                   </div>
                   <h3>{step.title}</h3>
