@@ -174,8 +174,7 @@
 }
 .sy-card:hover { border-color: rgba(115, 87, 255, .6); box-shadow: 0 26px 60px -28px rgba(115, 87, 255, .55); background: linear-gradient(180deg, rgba(30, 33, 50, .95), rgba(14, 16, 25, .95)); transform: translateY(-4px); }
 .sy-card:hover .sy-card-icon { transform: scale(1.08) rotate(-4deg); }
-.sy-card-icon { width: 52px; height: 52px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; transition: transform 400ms var(--sy-ease), box-shadow 400ms ease; }
-.sy-card-icon-brand { background: linear-gradient(140deg, var(--sy-violet), var(--sy-blue)); margin: 0 0 20px; }
+.sy-card-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; transition: transform 400ms var(--sy-ease), filter 400ms ease; }
 .sy-card-method { position: relative; overflow: hidden; }
 .sy-card-method::before {
   content: ''; position: absolute; inset: -40% -40% auto auto; width: 70%; padding-top: 70%;
@@ -184,7 +183,9 @@
 }
 .sy-card-method:hover::before { opacity: .5; }
 .sy-card-method:hover { border-color: var(--sy-method-glow); }
-.sy-card-method:hover .sy-card-icon { box-shadow: 0 0 42px var(--sy-method-glow); }
+.sy-card-method .sy-card-icon { margin: 0 0 20px; }
+.sy-card-method .sy-card-icon .sy-icon { width: 36px; height: 36px; stroke-width: 1.35; }
+.sy-card-method:hover .sy-card-icon { filter: drop-shadow(0 0 12px var(--sy-method-glow)) !important; }
 .sy-card h3 { font-size: 19px; font-weight: 700; margin: 20px 0 8px; }
 .sy-card p { font-size: 14.5px; line-height: 1.6; color: var(--sy-muted); margin: 0; }
 
