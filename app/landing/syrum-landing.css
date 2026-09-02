@@ -113,7 +113,7 @@
 .sy-ken-3 { animation-delay: 15s; }
 .sy-hero-scrim-a { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(7, 8, 12, .88) 0%, rgba(7, 8, 12, .62) 38%, rgba(7, 8, 12, .3) 62%, rgba(7, 8, 12, .26) 100%); pointer-events: none; }
 .sy-hero-scrim-b { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(3, 4, 7, .9) 0%, rgba(3, 4, 7, .74) 26%, rgba(3, 4, 7, .34) 50%, rgba(3, 4, 7, 0) 68%); pointer-events: none; }
-.sy-hero-scrim-c { position: absolute; inset: auto 0 0; height: 320px; background: linear-gradient(to bottom, rgba(7, 8, 12, 0) 0%, rgba(7, 8, 12, .5) 22%, rgba(30, 12, 60, .68) 55%, var(--sy-bg) 92%); pointer-events: none; }
+.sy-hero-scrim-c { position: absolute; inset: auto 0 0; height: 340px; background: linear-gradient(to bottom, rgba(7, 8, 12, 0) 0%, rgba(7, 8, 12, .5) 20%, rgba(24, 12, 46, .8) 55%, rgba(19, 11, 36, .96) 100%); pointer-events: none; }
 .sy-hero-content {
   position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto;
   display: grid; justify-content: center;
@@ -142,7 +142,7 @@
 .sy-section { position: relative; padding: clamp(56px, 7vw, 104px) clamp(20px, 3vw, 64px); background: var(--sy-bg); overflow: hidden; }
 .sy-section-inner { position: relative; max-width: 1360px; margin: 0 auto; }
 .sy-section-glow { position: absolute; inset: 0; pointer-events: none; }
-.sy-glow-violet { background: radial-gradient(85% 65% at 50% 2%, rgba(123, 43, 255, .48), rgba(54, 140, 255, .18) 46%, transparent 78%); }
+.sy-glow-violet { background: radial-gradient(90% 75% at 50% 16%, rgba(123, 43, 255, .4) 0%, rgba(123, 43, 255, .1) 42.7%, transparent 100%); }
 .sy-glow-blue { background: radial-gradient(70% 48% at 50% 52%, rgba(54, 140, 255, .28), rgba(115, 87, 255, .12) 48%, transparent 74%); }
 .sy-glow-contact { background: radial-gradient(60% 45% at 78% 45%, rgba(115, 87, 255, .22), transparent 72%); }
 .sy-section-heading { text-align: center; }
