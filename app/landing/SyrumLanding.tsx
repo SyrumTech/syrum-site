@@ -104,9 +104,12 @@ const contactPoints = [
 
 const footerPlatformLinks = ['crm', 'atendimento omnichannel', 'whatsapp integrado', 'automação de processos', 'relatórios e indicadores'];
 
-const clientLogos = [
-  { name: 'Conrat Tecnologia', src: '/landing/clients/conrat-tecnologia.webp' },
-];
+const conratLogo = (key: string) => (
+  <img key={key} src="/landing/clients/conrat-tecnologia.webp" loading="lazy" decoding="async" alt="Conrat Tecnologia" />
+);
+
+// Enquanto houver um cliente, o logo se repete para manter a animação do marquee.
+const clientLogos = [conratLogo('conrat-1'), conratLogo('conrat-2'), conratLogo('conrat-3')];
 
 export default function SyrumLanding({ className }: { className: string }) {
   const scrolled = useHeaderScrolled();
@@ -214,12 +217,12 @@ export default function SyrumLanding({ className }: { className: string }) {
           <div className="sy-section-inner">
             <h2 data-reveal="0" className="sy-reveal sy-h2-center sy-h2-small">empresas que já operam com a syrum</h2>
           </div>
-          <div data-reveal="1" className="sy-reveal sy-client-row">
-            {clientLogos.map((client) => (
-              <div className="sy-marquee-item" key={client.name}>
-                <img src={client.src} loading="lazy" decoding="async" alt={client.name} />
-              </div>
-            ))}
+          <div className="sy-marquee-mask">
+            <div className="sy-marquee-track">
+              {Array.from({ length: 8 }, () => clientLogos).flat().map((client, index) => (
+                <div className="sy-marquee-item" key={index}>{client}</div>
+              ))}
+            </div>
           </div>
         </section>
 
