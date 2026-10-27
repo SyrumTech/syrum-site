@@ -12,16 +12,10 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: 'crm',
-    description: 'todo o relacionamento com o cliente em um cadastro único, com histórico completo.',
-    items: ['Cadastro único por cliente', 'Histórico completo de interações', 'Dados centralizados e acessíveis à equipe'],
+    title: 'crm e gestão de clientes',
+    description: 'todo o relacionamento com o cliente em um cadastro único, com histórico completo e segmentação.',
+    items: ['Cadastro único por cliente e empresa', 'Histórico completo de interações', 'Segmentação e dados acessíveis à equipe'],
     icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></>,
-  },
-  {
-    title: 'gestão de clientes',
-    description: 'segmentação, dados e movimentações organizados para cada empresa e contato.',
-    items: ['Cadastro centralizado', 'Histórico de interações', 'Segmentação e organização'],
-    icon: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>,
   },
   {
     title: 'gestão de vendas',

@@ -96,7 +96,7 @@ const contactPoints = [
   },
   {
     label: 'Instagram',
-    value: 'sistema_syrum',
+    value: '@sistemas_syrum',
     href: 'https://www.instagram.com/sistemas_syrum',
     icon: <><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" /><circle cx="12" cy="12" r="4.1" /><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none" /></>,
   },
@@ -105,15 +105,7 @@ const contactPoints = [
 const footerPlatformLinks = ['crm', 'atendimento omnichannel', 'whatsapp integrado', 'automação de processos', 'relatórios e indicadores'];
 
 const clientLogos = [
-  <img key="conrat" src="/landing/clients/conrat-tecnologia.webp" loading="lazy" decoding="async" alt="Conrat Tecnologia" />,
-  <div key="nortex" className="sy-marquee-wordmark">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 26V6l22 20V6" /></svg>
-    <span>Nortex</span>
-  </div>,
-  <div key="vellum" className="sy-marquee-wordmark sy-marquee-wordmark-upper">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h24M8 16h16M12 24h8" /></svg>
-    <span>Vellum</span>
-  </div>,
+  { name: 'Conrat Tecnologia', src: '/landing/clients/conrat-tecnologia.webp' },
 ];
 
 export default function SyrumLanding({ className }: { className: string }) {
@@ -163,7 +155,7 @@ export default function SyrumLanding({ className }: { className: string }) {
               <p className="sy-hero-kicker">Plataforma de Gestão Operacional</p>
               <h1>
                 Alinhamos toda sua<span className="sy-gradient-text">&nbsp;operação</span>
-                <br />em só&nbsp;<span className="sy-gradient-text">fluxo</span>.
+                <br />em um só&nbsp;<span className="sy-gradient-text">fluxo</span>.
               </h1>
               <p className="sy-hero-lead">Tudo o que sua empresa precisa para organizar, automatizar e acompanhar sua operação em um só lugar.</p>
               <div className="sy-hero-actions">
@@ -222,12 +214,12 @@ export default function SyrumLanding({ className }: { className: string }) {
           <div className="sy-section-inner">
             <h2 data-reveal="0" className="sy-reveal sy-h2-center sy-h2-small">empresas que já operam com a syrum</h2>
           </div>
-          <div className="sy-marquee-mask">
-            <div className="sy-marquee-track">
-              {Array.from({ length: 8 }, () => clientLogos).flat().map((client, index) => (
-                <div className="sy-marquee-item" key={index}>{client}</div>
-              ))}
-            </div>
+          <div data-reveal="1" className="sy-reveal sy-client-row">
+            {clientLogos.map((client) => (
+              <div className="sy-marquee-item" key={client.name}>
+                <img src={client.src} loading="lazy" decoding="async" alt={client.name} />
+              </div>
+            ))}
           </div>
         </section>
 
@@ -278,9 +270,6 @@ export default function SyrumLanding({ className }: { className: string }) {
               </a>
               <a href="https://www.instagram.com/sistemas_syrum" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.31-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.32-.27.8-.31 1.7-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.4.9.19 1.38.31 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.12.8.27 1.7.31 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.31.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.32.27-.8.31-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.31-1.7a2.9 2.9 0 0 0-.69-1.06 2.9 2.9 0 0 0-1.06-.69c-.32-.12-.8-.27-1.7-.31-1.24-.06-1.61-.07-4.75-.07Zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.14-3.2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z" /></svg>
-              </a>
-              <a href="#topo" aria-label="Facebook (em breve)" title="Facebook (em breve)">
-                <svg viewBox="0 0 24 24" className="sy-icon-solid" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.54-1.5H16.7V3.63c-.28-.04-1.25-.12-2.38-.12-2.35 0-3.96 1.44-3.96 4.07V9.9H7.65V13h2.71v8h3.14Z" /></svg>
               </a>
             </div>
           </div>
